@@ -1,0 +1,42 @@
+name: Refresh latest writing
+
+# Rebuilds the "Latest writing" block from techearl.com's sitemap once a day.
+# It commits only when an article has actually appeared or changed, so the repo
+# does not accumulate no-op commits and the page only looks fresh when it is.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-writing
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Rebuild the writing block
+        run: node scripts/refresh-writing.mjs
+
+      - name: Commit if the list changed
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No new writing; nothing to commit."
+            exit 0
+          fi
+          git config user.name "ishankaru"
+          git config user.email "ishankaru@gmail.com"
+          git add index.html
+          git commit -m "Refresh latest writing"
+          git push

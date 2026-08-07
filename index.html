@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ishan Karunaratne, Systems and Network Architect, CTO</title>
+<meta name="description" content="Ishan Karunaratne, systems and network architect and Chief Technology Officer at Rehab Media Group. Cloud, Linux, DNS, and infrastructure. US Army veteran.">
+<link rel="canonical" href="https://ishankarunaratne.com/">
+<meta name="author" content="Ishan Karunaratne">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://ishankarunaratne.com/">
+<meta property="og:title" content="Ishan Karunaratne, Systems and Network Architect, CTO">
+<meta property="og:description" content="Systems and network architect and Chief Technology Officer at Rehab Media Group. Production software, cloud and network architecture, Linux systems, and the bare metal underneath them. US Army veteran. Writer at TechEarl.">
+<meta property="og:image" content="https://ishankarunaratne.com/assets/ishan-karunaratne.webp">
+<meta property="profile:first_name" content="Ishan">
+<meta property="profile:last_name" content="Karunaratne">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@ishankaru">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" href="assets/fonts/schibsted-400-500-600-700-800.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face {
+  font-family: 'Schibsted Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url(assets/fonts/schibsted-400-500-600-700-800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Schibsted Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url(assets/fonts/schibsted-400-500-600-700-800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Schibsted Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+  src: url(assets/fonts/schibsted-400-500-600-700-800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Schibsted Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url(assets/fonts/schibsted-400-500-600-700-800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Schibsted Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: optional;
+  src: url(assets/fonts/schibsted-400-500-600-700-800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ishankarunaratne.com
+   One family, many weights. No mono labels, no section eyebrows, no equal-box grids.
+   The page is meant to read as a letter followed by a record, not as a landing page. */
+
+:root {
+  /* Full palette. Deep saturated indigo carries the masthead and contact; a vivid
+     vermilion is the action colour; a cool teal is the secondary mark. The document
+     surface stays near-white so ten colourful screenshots have somewhere to sit. */
+  --ink:      oklch(0.235 0.095 274);
+  --ink-2:    oklch(0.34 0.085 274);
+  --ink-soft: oklch(0.455 0.045 272);
+  --paper:    oklch(0.985 0.004 270);
+  --paper-2:  oklch(0.955 0.016 276);
+  --body:     oklch(0.335 0.030 272);
+  --on-dark:  oklch(0.905 0.022 275);
+  --on-dark-soft: oklch(0.755 0.045 278);
+  --signal:   oklch(0.54 0.200 32);
+  --signal-lt:oklch(0.735 0.175 52);
+  --teal:     oklch(0.60 0.115 205);
+  --teal-lt:  oklch(0.80 0.115 200);
+  --rule:     oklch(0.885 0.016 275);
+  --rule-dk:  oklch(0.36 0.070 274);
+
+  --measure: 66ch;
+  --shell: 68rem;
+
+  --t-sm:  clamp(0.875rem, 0.855rem + 0.1vw, 0.94rem);
+  --t-0:   clamp(1.0625rem, 1.02rem + 0.22vw, 1.19rem);
+  --t-1:   clamp(1.25rem, 1.17rem + 0.4vw, 1.5rem);
+  --t-2:   clamp(1.55rem, 1.38rem + 0.85vw, 2.15rem);
+  --t-3:   clamp(2rem, 1.6rem + 2vw, 3.1rem);
+  --t-4:   clamp(2.9rem, 2.1rem + 3.9vw, 5.1rem);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--body);
+  font-family: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--t-0);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { color: var(--ink); margin: 0; text-wrap: balance; letter-spacing: -0.022em; }
+p { text-wrap: pretty; }
+a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: from-font; }
+a:hover { text-decoration-color: var(--signal); }
+
+.shell { width: min(100% - 2.5rem, var(--shell)); margin-inline: auto; }
+@media (min-width: 48rem) { .shell { width: min(100% - 6rem, var(--shell)); } }
+
+.skip { position: absolute; left: -9999px; background: var(--ink); color: var(--paper); padding: 0.75rem 1.25rem; }
+.skip:focus { left: 0; top: 0; z-index: 10; }
+:where(a, button):focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  background: var(--ink);
+  color: var(--on-dark);
+  padding-block: clamp(3.5rem, 9vw, 7rem) clamp(3.5rem, 8vw, 6rem);
+}
+.masthead__grid { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); }
+@media (min-width: 56rem) {
+  .masthead__grid { grid-template-columns: minmax(0, 1fr) 15rem; align-items: start; }
+}
+.masthead h1 {
+  color: var(--paper);
+  font-size: var(--t-4);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.1rem;
+}
+.masthead__role {
+  font-size: var(--t-1);
+  font-weight: 400;
+  color: var(--on-dark-soft);
+  margin: 0 0 1.8rem;
+  max-width: 30ch;
+}
+.masthead__role em { font-style: normal; color: var(--teal-lt); font-weight: 500; }
+
+.lede { font-size: var(--t-1); line-height: 1.55; max-width: 42ch; margin: 0; color: var(--on-dark); }
+.lede strong { color: var(--paper); font-weight: 600; }
+.lede a { color: var(--teal-lt); text-decoration-color: var(--teal-lt); }
+
+.masthead__cta { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; margin: 2.4rem 0 0; }
+.btn {
+  display: inline-block; padding: 0.85rem 1.6rem;
+  background: var(--signal-lt); color: oklch(0.18 0.03 50);
+  font-weight: 600; font-size: var(--t-sm); text-decoration: none;
+  transition: background 0.4s var(--ease);
+}
+.btn:hover { background: var(--teal-lt); color: oklch(0.16 0.04 210); }
+.masthead__cta > a:not(.btn) { color: var(--on-dark); font-size: var(--t-sm); }
+.masthead__cta > a:not(.btn):hover { color: var(--teal-lt); }
+
+.masthead__portrait { max-width: 15rem; }
+.masthead__portrait img { width: 100%; filter: grayscale(1) contrast(1.03) brightness(1.02); }
+@media (min-width: 56rem) { .masthead__portrait { margin-top: 0.6rem; } }
+
+/* ---------- the note: the human moment, deliberately not a grid ---------- */
+
+.note {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--rule);
+}
+.note p {
+  font-size: var(--t-2);
+  line-height: 1.42;
+  letter-spacing: -0.014em;
+  color: var(--ink);
+  font-weight: 400;
+  max-width: 26ch;
+  margin: 0;
+}
+.note p + p { margin-top: 1.2rem; max-width: 46ch; font-size: var(--t-1); line-height: 1.55; color: var(--ink-soft); letter-spacing: -0.008em; }
+@media (min-width: 56rem) {
+  .note .shell { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+  .note p + p { margin-top: 0.4rem; }
+}
+
+/* ---------- sections ---------- */
+
+.sec { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.sec + .sec { border-top: 1px solid var(--rule); }
+.sec:nth-of-type(even) { background: var(--paper-2); }
+.sec > .shell > h2 {
+  font-size: var(--t-2); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 2.6rem;
+}
+
+/* practice: hanging subheads, staggered widths, not a box grid */
+.practice { display: grid; gap: clamp(2.2rem, 4vw, 3rem); }
+@media (min-width: 56rem) { .practice { grid-template-columns: 14rem minmax(0, 1fr); gap: 2.4rem clamp(2rem, 4vw, 3.5rem); } }
+.practice h3 { font-size: var(--t-0); font-weight: 700; letter-spacing: -0.012em; }
+.practice p { margin: 0.4rem 0 0; max-width: var(--measure); }
+@media (min-width: 56rem) {
+  .practice h3 { grid-column: 1; text-align: right; padding-top: 0.1rem; color: var(--ink); }
+  .practice p { grid-column: 2; margin: 0; padding-bottom: 2.2rem; border-bottom: 1px solid var(--rule); }
+  .practice > :nth-last-child(2), .practice > :last-child { border-bottom: 0; padding-bottom: 0; }
+}
+
+/* work: real screenshots carry this section */
+.work { display: grid; gap: 3rem; }
+@media (min-width: 56rem) { .work { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.5rem clamp(2rem, 4vw, 3rem); } }
+@media (min-width: 68rem) { .work { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.work__shot {
+  display: block;
+  background: oklch(0.93 0.004 240);
+  overflow: hidden;
+  margin-bottom: 1.1rem;
+  border: 1px solid var(--rule);
+  transition: border-color 0.4s var(--ease);
+}
+.work__shot img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.7s var(--ease);
+}
+.work__shot:hover { border-color: var(--signal); }
+.work__shot:hover img { transform: scale(1.018); }
+
+.work h3 { font-size: var(--t-1); font-weight: 700; margin-bottom: 0.2rem; }
+.work__note { color: var(--ink-soft); font-size: var(--t-sm); margin: 0 0 0.7rem; }
+.work p:last-child { margin: 0; max-width: 52ch; }
+.work a { text-decoration-color: var(--signal); }
+
+@media (min-width: 56rem) {
+  .work__lead {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3.2rem);
+    align-items: center;
+    padding-bottom: 3.2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .work__lead .work__shot { margin-bottom: 0; }
+  .work__lead h3 { font-size: var(--t-2); letter-spacing: -0.025em; }
+  .work__lead p:last-child { max-width: 46ch; }
+}
+@media (prefers-reduced-motion: reduce) { .work__shot:hover img { transform: none; } }
+
+/* track */
+.track { list-style: none; margin: 0; padding: 0; }
+.track > li { padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+.track > li:first-child { border-top: 0; padding-top: 0; }
+@media (min-width: 52rem) {
+  .track > li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 2.5rem; }
+}
+.track__when { color: var(--ink-soft); font-size: var(--t-sm); margin: 0; font-variant-numeric: tabular-nums; }
+.track h3 { font-size: var(--t-0); font-weight: 700; margin: 0; }
+.track__where { color: var(--ink-soft); margin: 0.1rem 0 0.5rem; font-size: var(--t-sm); }
+.track > li > div > p:last-child { margin: 0; max-width: var(--measure); }
+.track__mark h3 { color: var(--signal); }
+
+/* stack: plain definition pairs, no colored labels */
+.stack { display: grid; gap: 1.5rem 3rem; margin: 0; }
+@media (min-width: 46rem) { .stack { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); } }
+.stack dt { font-weight: 700; color: var(--ink); font-size: var(--t-sm); }
+.stack dd { margin: 0.15rem 0 0; color: var(--ink-soft); }
+
+/* credentials */
+.creds { margin: 0; display: grid; }
+@media (min-width: 46rem) { .creds { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 4rem; } }
+.creds > div { padding: 0.95rem 0; border-top: 1px solid var(--rule); }
+.creds > div:first-child, .creds > div:nth-child(2) { border-top: 0; padding-top: 0; }
+@media (max-width: 45.99rem) { .creds > div:nth-child(2) { border-top: 1px solid var(--rule); padding-top: 0.95rem; } }
+.creds dt { font-weight: 700; color: var(--ink); }
+.creds dd { margin: 0; color: var(--ink-soft); }
+
+/* questions: prose, two columns, not three equal cards */
+.faq { display: grid; gap: 2.4rem; }
+@media (min-width: 52rem) { .faq { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.6rem 4rem; } }
+.faq h3 { font-size: var(--t-0); font-weight: 700; margin-bottom: 0.35rem; }
+.faq p { margin: 0; max-width: 54ch; }
+
+/* contact */
+.contact { background: var(--ink); color: var(--on-dark); padding-block: clamp(3.5rem, 8vw, 6rem); }
+.contact h2 { color: var(--paper); font-size: var(--t-2); font-weight: 700; margin-bottom: 1.2rem; }
+.contact__lede { font-size: var(--t-1); max-width: 44ch; margin: 0 0 2.4rem; color: var(--on-dark); }
+.contact__mail { margin: 0 0 2.4rem; }
+.contact__mail a { font-size: var(--t-2); font-weight: 700; color: var(--signal-lt); letter-spacing: -0.025em; }
+.contact__mail a:hover { color: var(--teal-lt); }
+.contact__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; list-style: none; margin: 0; padding: 0; }
+.contact__links a { color: var(--on-dark-soft); font-size: var(--t-sm); }
+.contact__links a:hover { color: var(--teal-lt); }
+
+.foot { padding-block: 2rem; }
+.foot .shell { display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; justify-content: space-between; }
+.foot p { margin: 0; font-size: var(--t-sm); color: var(--ink-soft); }
+
+/* latest writing: refreshed daily from the techearl sitemap */
+.writing { list-style: none; margin: 0; padding: 0; }
+.writing li { padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+.writing li:first-child { border-top: 0; padding-top: 0; }
+.writing a { font-weight: 700; color: var(--ink); text-decoration-color: var(--signal); }
+.writing span { display: block; color: var(--ink-soft); font-size: var(--t-sm); margin-top: 0.15rem; max-width: 68ch; }
+.writing time { display: block; color: var(--ink-soft); font-size: var(--t-sm); margin-top: 0.3rem; font-variant-numeric: tabular-nums; }
+@media (min-width: 52rem) {
+  .writing li { display: grid; grid-template-columns: minmax(0, 1fr) 9rem; gap: 0 2rem; }
+  .writing time { grid-column: 2; grid-row: 1 / span 2; margin-top: 0.15rem; text-align: right; }
+}
+
+/* ---------- motion: hidden state set by JS only, never CSS alone ---------- */
+
+.reveal {
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+  transition-delay: calc(var(--i, 0) * 45ms);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+}
+
+</style>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://ishankarunaratne.com/#person",
+      "name": "Ishan Karunaratne",
+      "givenName": "Ishan",
+      "familyName": "Karunaratne",
+      "url": "https://ishankarunaratne.com/",
+      "image": "https://ishankarunaratne.com/assets/ishan-karunaratne.webp",
+      "jobTitle": "Systems and Network Architect, Chief Technology Officer",
+      "disambiguatingDescription": "The systems and network architect and Chief Technology Officer at Rehab Media Group, US Army veteran of Operation Iraqi Freedom, writer of TechEarl and developer of DNS Checker. Not the frontend engineer at Moresand Technologies, and not the founder and managing director of Sinhalite Holdings in Sri Lanka. Identified uniquely by ORCID 0009-0002-3088-0769.",
+      "description": "Ishan Karunaratne is a systems and network architect and Chief Technology Officer with more than two decades designing, building, and running production software, cloud and network architecture, Linux systems, and the bare metal underneath them. A US Army veteran who served in Operation Iraqi Freedom. He writes TechEarl and built DNS Checker.",
+      "nationality": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "0009-0002-3088-0769",
+        "url": "https://orcid.org/0009-0002-3088-0769"
+      },
+      "sameAs": [
+        "https://techearl.com/author",
+        "https://github.com/ishankaru",
+        "https://www.linkedin.com/in/ishankarunaratne/",
+        "https://x.com/ishankaru",
+        "https://orcid.org/0009-0002-3088-0769",
+        "https://www.facebook.com/thetechearl",
+        "https://www.threads.com/@ishan.karunaratne"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Rehab Media Group",
+        "url": "https://rehabmedia.com"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Charles Sturt University",
+          "url": "https://www.csu.edu.au"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Ananda College",
+          "url": "https://www.anandacollege.lk"
+        }
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Chief Technology Officer",
+        "occupationalCategory": "15-1299.00"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Bachelor's degree, online systems, Charles Sturt University",
+          "credentialCategory": "degree",
+          "dateCreated": "2010"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "CompTIA A+",
+          "credentialCategory": "certification",
+          "dateCreated": "2009"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "CompTIA Network+",
+          "credentialCategory": "certification",
+          "dateCreated": "2009"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "CompTIA Security+",
+          "credentialCategory": "certification",
+          "dateCreated": "2009"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Prosoft Certified Internet Webmaster (CIW) Professional",
+          "credentialCategory": "certification",
+          "dateCreated": "2006"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Cisco CCNA coursework",
+          "credentialCategory": "certification",
+          "dateCreated": "2005"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Principal Certified Lotus Professional, IBM Domino R5 Application Development",
+          "credentialCategory": "certification",
+          "dateCreated": "2002"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Diploma in Advanced Programming Techniques (Unix/C, shell scripting)",
+          "credentialCategory": "diploma",
+          "dateCreated": "1999"
+        }
+      ],
+      "knowsAbout": [
+        "Software architecture",
+        "Distributed systems",
+        "Linux systems administration",
+        "DevOps",
+        "CI/CD",
+        "MySQL",
+        "PostgreSQL",
+        "Elasticsearch",
+        "Redis",
+        "Application security",
+        "DNS",
+        "DNSSEC",
+        "Networking",
+        "Network architecture",
+        "BGP",
+        "Bare metal infrastructure",
+        "Cloud infrastructure",
+        "AWS",
+        "Google Cloud Platform",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "AI engineering",
+        "Large language models",
+        "Retrieval-augmented generation",
+        "Node.js",
+        "TypeScript",
+        "PHP",
+        "Python",
+        "React",
+        "Next.js",
+        "WordPress",
+        "Lotus Domino",
+        "Performance optimization",
+        "Technical writing"
+      ],
+      "owns": [
+        {
+          "@id": "https://ishankarunaratne.com/#dnschkr"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#techearl"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#lipwalk"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#ald"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#lyricslk"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#chordslk"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#drp"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#wppaste"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#b64enc"
+        },
+        {
+          "@id": "https://ishankarunaratne.com/#b64dec"
+        }
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://ishankarunaratne.com/#profilepage",
+      "url": "https://ishankarunaratne.com/",
+      "name": "Ishan Karunaratne, Systems and Network Architect, CTO",
+      "mainEntity": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ishankarunaratne.com/#website",
+      "url": "https://ishankarunaratne.com/",
+      "name": "Ishan Karunaratne",
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ishankarunaratne.com/#dnschkr",
+      "name": "DNS Checker",
+      "url": "https://dnschkr.com",
+      "description": "Domain intelligence platform analysing more than 240 million domains a day. DNS health checks, propagation, IP intelligence, and email authentication.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://ishankarunaratne.com/#techearl",
+      "name": "TechEarl",
+      "url": "https://techearl.com",
+      "description": "Field notes on shipping real systems: WordPress, Linux, DevOps, application security, databases, JavaScript, CSS, AI engineering, and regex.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "author": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ishankarunaratne.com/#lipwalk",
+      "name": "Lipwalk",
+      "url": "https://lipwalk.com",
+      "description": "Privacy-first embeddable comment system with threaded discussion, reactions, star ratings, and AI moderation. No third-party tracking.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ishankarunaratne.com/#ald",
+      "name": "American Lawyers Directory",
+      "url": "https://americanlawyersdirectory.com",
+      "description": "Independent attorney directory covering 51 states and DC across eight practice areas, built on state bar records rather than paid placement.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ishankarunaratne.com/#lyricslk",
+      "name": "Lyrics LK",
+      "url": "https://lyrics-lk.com",
+      "description": "Archive of Sinhala song lyrics from Sri Lanka.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ishankarunaratne.com/#chordslk",
+      "name": "Chords LK",
+      "url": "https://chordslk.com",
+      "description": "Guitar chords and tabs for Sinhala songs.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ishankarunaratne.com/#drp",
+      "name": "Dr Pepper Addiction",
+      "url": "https://drpepperaddiction.com",
+      "description": "Catalogue of Dr Pepper varieties with caffeine and nutrition data, plus caffeine-dependence information.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ishankarunaratne.com/#wppaste",
+      "name": "WPPaste",
+      "url": "https://wppaste.com",
+      "description": "Code paste tool for WordPress developers with PHP and JavaScript highlighting and WordPress functions and hooks auto-linked to the documentation.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ishankarunaratne.com/#b64enc",
+      "name": "Base64 Encode",
+      "url": "https://yobase64encode.com",
+      "description": "Free online Base64 encoder.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://ishankarunaratne.com/#b64dec",
+      "name": "Base64 Decode",
+      "url": "https://yobase64decode.com",
+      "description": "Free online Base64 decoder.",
+      "inLanguage": "en",
+      "creator": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "publisher": {
+        "@id": "https://ishankarunaratne.com/#person"
+      },
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-11XFYLQ238"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-11XFYLQ238');
+</script>
+
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="shell">
+    <div class="masthead__grid">
+      <div class="masthead__id">
+        <h1>Ishan<br>Karunaratne</h1>
+        <p class="masthead__role">Systems and network architect. <em>Chief Technology Officer.</em> Twenty-seven years of keeping things running.</p>
+
+        <p class="lede" id="definition">
+          <strong>Ishan Karunaratne is a systems and network architect and Chief Technology Officer</strong>
+          with more than two decades designing, building, and running production software, Linux
+          systems, and DevOps infrastructure. He is CTO at Rehab Media Group, a US Army veteran who deployed to Iraq for
+          Operation Iraqi Freedom, the writer behind <a href="https://techearl.com">TechEarl</a>, and
+          the sole developer of <a href="https://dnschkr.com">DNS Checker</a>.
+        </p>
+
+        <p class="masthead__cta">
+          <a class="btn" href="#contact">Work with me</a>
+          <a href="https://techearl.com">Read the writing &rarr;</a>
+        </p>
+      </div>
+
+      <div class="masthead__portrait">
+        <img src="assets/ishan-karunaratne.webp" alt="Ishan Karunaratne, Chief Technology Officer" width="312" height="250" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+<section class="note">
+  <div class="shell">
+    <p>I was pulling systems apart to see how they broke long before anyone paid me to build them.</p>
+    <p>Professionally that is twenty-seven years now: networks, then servers, then databases,
+    then architecture, then teams, and lately AI. The shape keeps changing and the underlying
+    question never does, which is what happens when this breaks and who finds out first. I
+    still write code most weeks, because a technology leader who has not touched the stack in
+    three years is guessing, and the team can always tell.</p>
+  </div>
+</section>
+
+<section class="sec" id="practice">
+  <div class="shell">
+    <h2>How I work</h2>
+    <div class="practice">
+      <h3>Architecture</h3>
+      <p>I design the shape of a system before anyone writes code: data model, failure modes, where
+      the load lands, what happens at 3am when a dependency goes away. Then I stay close enough to the
+      implementation to find out whether the design survived contact with reality.</p>
+
+      <h3>Leadership</h3>
+      <p>Technical strategy, hiring, and delivery, including M&amp;A integrations and cloud migrations.
+      I have taken teams through the unglamorous part, where two companies' systems have to become one
+      without anybody's customers noticing.</p>
+
+      <h3>Security</h3>
+      <p>I came up reverse engineering and debugging at the instruction level, fascinated by how things
+      break. That lens never left. Security is part of the architecture, decided early, not a hardening
+      pass bolted on the week before launch.</p>
+
+      <h3>AI, where it pays</h3>
+      <p>LLM applications, retrieval-augmented generation, agents, and the evaluation harnesses that
+      catch regressions before users do. The interesting question is rarely whether a model can do
+      something. It is whether the output is reliable enough to put in front of a customer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="shell">
+    <h2>Built and still running</h2>
+    <div class="work">
+      <article class="work__lead">
+        <a class="work__shot" href="https://dnschkr.com">
+          <img src="assets/dnschkr.webp" alt="The DNS Checker home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <div class="work__text">
+          <h3><a href="https://dnschkr.com">DNS Checker</a></h3>
+          <p class="work__note">Designed, written, and operated solo &nbsp;·&nbsp; dnschkr.com</p>
+          <p>A domain intelligence platform that analyzes more than 240 million domains a day. I own
+          every layer: ingestion, the Elasticsearch index, the API, the front end, and the servers it
+          runs on. Nobody else has ever had a commit in it, which is either a good sign or a warning,
+          depending on your view of bus factor.</p>
+        </div>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://techearl.com">
+          <img src="assets/techearl.webp" alt="The TechEarl home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://techearl.com">TechEarl</a></h3>
+        <p class="work__note">790+ articles, single author</p>
+        <p>Field notes on shipping real systems, written from work that went to production rather than from tutorials. The bulk is WordPress, Linux, DevOps, and application security, roughly 130 pieces each, then databases, JavaScript, CSS, AI engineering, and regex.</p>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://lipwalk.com">
+          <img src="assets/lipwalk.webp" alt="The Lipwalk home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://lipwalk.com">Lipwalk</a></h3>
+        <p class="work__note">Privacy-first comment system</p>
+        <p>Threaded comments, reactions, and star ratings you embed with one script tag, funded by subscriptions instead of by watching the people reading your site. AI moderation, a REST API, and TypeScript SDKs.</p>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://americanlawyersdirectory.com">
+          <img src="assets/ald.webp" alt="The American Lawyers Directory home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://americanlawyersdirectory.com">American Lawyers Directory</a></h3>
+        <p class="work__note">51 states and DC, 8 practice areas</p>
+        <p>An independent attorney directory built on state bar records rather than paid placement. No firm owns it and nobody can buy a better position in the listings.</p>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://lyrics-lk.com">
+          <img src="assets/lyricslk.webp" alt="The Lyrics LK home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://lyrics-lk.com">Lyrics LK</a></h3>
+        <p class="work__note">Sinhala song lyrics archive</p>
+        <p>Sri Lankan music is badly served online, so I built the archive I wanted to exist. Thousands of Sinhala lyrics, searchable, with no popups between you and the words.</p>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://chordslk.com">
+          <img src="assets/chordslk.webp" alt="The Chords LK home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://chordslk.com">Chords LK</a></h3>
+        <p class="work__note">Guitar chords and tabs</p>
+        <p>The companion to the lyrics archive: chords and tabs for Sinhala songs, for the people actually trying to play them rather than just read along.</p>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://drpepperaddiction.com">
+          <img src="assets/drp.webp" alt="The Dr Pepper Addiction home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://drpepperaddiction.com">Dr Pepper Addiction</a></h3>
+        <p class="work__note">19 varieties, caffeine data, and a joke</p>
+        <p>Half the fun of this one is the joke and the other half is real. It catalogues every Dr Pepper variety with the caffeine and nutrition numbers, and takes the caffeine-dependence part more seriously than the name suggests.</p>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://wppaste.com">
+          <img src="assets/wppaste.webp" alt="The WPPaste home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://wppaste.com">WPPaste</a></h3>
+        <p class="work__note">Code paste for WordPress developers</p>
+        <p>A paste bin that knows what it is looking at. PHP and JavaScript syntax highlighting, and every WordPress function and hook in your snippet auto-linked to its documentation.</p>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://yobase64encode.com">
+          <img src="assets/b64enc.webp" alt="The Base64 Encode home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://yobase64encode.com">Base64 Encode</a></h3>
+        <p class="work__note">Single-purpose encoder</p>
+        <p>Paste text in, get Base64 out. Nothing else on the page, no account, and no step between
+        arriving and having the answer.</p>
+      </article>
+
+      <article>
+        <a class="work__shot" href="https://yobase64decode.com">
+          <img src="assets/b64dec.webp" alt="The Base64 Decode home page" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <h3><a href="https://yobase64decode.com">Base64 Decode</a></h3>
+        <p class="work__note">Single-purpose decoder</p>
+        <p>The other direction, on its own domain rather than as a tab on the encoder, because that is
+        how people actually search for it.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="writing">
+  <div class="shell">
+    <h2>Latest writing</h2>
+    <!-- writing:start -->
+      <ul class="writing">
+        <li>
+          <a href="https://techearl.com/mac-set-date-command-line">Set the Date and Time From the macOS Command Line (BSD date)</a>
+          <span>Set the macOS clock from Terminal with the BSD date command: MMDDhhmm[[CC]YY], not date -I (that is a GNU output flag). Turn off network time first or</span>
+          <time datetime="2026-06-01">2 June 2026</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/image-to-ascii-art-command-line">Image to ASCII Art From the Command Line (jp2a and chafa)</a>
+          <span>Turn a JPG or PNG into ASCII art from the command line with jp2a (classic, ANSI color, invert for dark terminals) or chafa (truecolor, Unicode detail</span>
+          <time datetime="2026-06-01">2 June 2026</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/ffmpeg-extract-audio-from-video">Extract Audio From a Video with ffmpeg (Copy or Re-encode)</a>
+          <span>Extract audio from a video with ffmpeg: copy the stream untouched for a fast lossless demux, or re-encode to MP3, AAC, or WAV. How to check the source</span>
+          <time datetime="2026-06-01">2 June 2026</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/flexbox-guide">Flexbox Guide: Axes, justify-content vs align-items, and flex</a>
+          <span>A practical flexbox guide: the main axis vs cross axis mental model, justify-content vs align-items, the flex shorthand, flex-wrap, gap, align-self</span>
+          <time datetime="2026-06-01">2 June 2026</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/flexbox-space-between-spacer">Flexbox: Push Items Apart Without a Spacer Div (margin-auto, gap)</a>
+          <span>How to push flex items apart in CSS: justify-content: space-between, margin-left: auto to send one item right, and gap for even spacing. Skip the empty</span>
+          <time datetime="2026-06-01">2 June 2026</time>
+        </li>
+      </ul>
+      <!-- writing:end -->
+  </div>
+</section>
+
+<section class="sec" id="track">
+  <div class="shell">
+    <h2>Where the time went</h2>
+    <ol class="track">
+      <li>
+        <p class="track__when">2021 &ndash; now</p>
+        <div>
+          <h3>Chief Technology Officer</h3>
+          <p class="track__where">Rehab Media Group</p>
+          <p>Technical strategy and architecture. Engineering culture, hiring, delivery, and the
+          integration work behind acquisitions.</p>
+        </div>
+      </li>
+      <li>
+        <p class="track__when">2020 &ndash; 2021</p>
+        <div>
+          <h3>Senior Engineer</h3>
+          <p class="track__where">Rehab Media Group</p>
+          <p>Supported a 250%+ month-over-month revenue increase inside the first six months, and
+          introduced the CI/CD the delivery process still runs on.</p>
+        </div>
+      </li>
+      <li>
+        <p class="track__when">2015 &ndash; 2020</p>
+        <div>
+          <h3>Backend Developer</h3>
+          <p class="track__where">All Around Creative, Inc.</p>
+          <p>Subject matter expert on WordPress at scale, plus the Linux server management behind the
+          sites running on it.</p>
+        </div>
+      </li>
+      <li>
+        <p class="track__when">2011 &ndash; now</p>
+        <div>
+          <h3>Founding Partner</h3>
+          <p class="track__where">INAV8 Internet Solutions, Colombo</p>
+          <p>Founded the company, secured its funding, built the network infrastructure, and hired and
+          trained the development team.</p>
+        </div>
+      </li>
+      <li>
+        <p class="track__when">2010</p>
+        <div>
+          <h3>Lecturer</h3>
+          <p class="track__where">IDM Computer Studies, Colombo</p>
+          <p>Taught Java and web development on the Charles Sturt University BIT curriculum. Teaching
+          a thing is still the fastest way I know to find out whether I actually understand it.</p>
+        </div>
+      </li>
+      <li>
+        <p class="track__when">2005 &ndash; 2008</p>
+        <div>
+          <h3>Technical Support, Tier II/III</h3>
+          <p class="track__where">Sprint Nextel, Denver</p>
+          <p>Wireless products and applications, plus a call-centre application I built in C#, ASP.NET,
+          and SQL Server.</p>
+        </div>
+      </li>
+      <li class="track__mark">
+        <p class="track__when">2002 &ndash; 2005</p>
+        <div>
+          <h3>Fire Direction Specialist 13P</h3>
+          <p class="track__where">United States Army, Operation Iraqi Freedom</p>
+          <p>Ran an office accountable for ninety personnel, and deployed to Iraq for Operation
+          Iraqi Freedom, computing firing solutions on the front line. Checklists, verification, and
+          the cost of a wrong number when there is no undo.</p>
+        </div>
+      </li>
+      <li>
+        <p class="track__when">1999 &ndash; 2002</p>
+        <div>
+          <h3>Programmer and Network Administrator</h3>
+          <p class="track__where">Charles Darwin University, Australia</p>
+          <p>Built the university website on Lotus Domino as a Principal Certified Developer, and ran
+          the residential college network for 250+ students. The first systems I was genuinely
+          responsible for keeping alive.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="stack">
+  <div class="shell">
+    <h2>Stack</h2>
+    <div class="stack">
+      <div>
+        <h3>Languages</h3>
+        <p>TypeScript, JavaScript, Node.js, PHP, Python, Bash, SQL, C#</p>
+      </div>
+      <div>
+        <h3>Data</h3>
+        <p>MySQL, MariaDB, PostgreSQL, Elasticsearch, Redis, ClickHouse</p>
+      </div>
+      <div>
+        <h3>Infrastructure</h3>
+        <p>AWS, Google Cloud, Cloudflare, Hetzner, Docker, Kubernetes, Terraform, Coolify</p>
+      </div>
+      <div>
+        <h3>Systems</h3>
+        <p>Linux (RHEL, Debian, Ubuntu), systemd, Nginx, DNS and DNSSEC, SPF/DKIM/DMARC, BGP</p>
+      </div>
+      <div>
+        <h3>Web</h3>
+        <p>React, Next.js, WordPress and Advanced Custom Fields at scale</p>
+      </div>
+      <div>
+        <h3>AI</h3>
+        <p>LLM applications, RAG, agents, prompt engineering, evaluation harnesses</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="credentials">
+  <div class="shell">
+    <h2>Credentials</h2>
+    <dl class="creds">
+      <div>
+        <dt>Charles Sturt University</dt>
+        <dd>Bachelor's degree, online systems, 2008 to 2010</dd>
+      </div>
+      <div>
+        <dt>CompTIA</dt>
+        <dd>A+, Network+, and Security+, 2009</dd>
+      </div>
+      <div>
+        <dt>Prosoft</dt>
+        <dd>Certified Internet Webmaster (CIW) Professional, 2006</dd>
+      </div>
+      <div>
+        <dt>Cisco</dt>
+        <dd>CCNA coursework, 2005</dd>
+      </div>
+      <div>
+        <dt>IBM Lotus</dt>
+        <dd>Principal Certified Lotus Professional, Domino R5 Application Development, 2002</dd>
+      </div>
+      <div>
+        <dt>Advanced Programming Techniques</dt>
+        <dd>Diploma, Unix and C, shell scripting, 1999</dd>
+      </div>
+      <div>
+        <dt>United States Army</dt>
+        <dd>Fire Direction Specialist 13P, veteran of Operation Iraqi Freedom</dd>
+      </div>
+      <div>
+        <dt>ORCID</dt>
+        <dd><a href="https://orcid.org/0009-0002-3088-0769">0009-0002-3088-0769</a></dd>
+      </div>
+      <div>
+        <dt>Ananda College</dt>
+        <dd>Colombo, Sri Lanka</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="shell">
+    <h2>Questions people ask</h2>
+    <div class="faq">
+      <article>
+        <h3>Who is Ishan Karunaratne?</h3>
+        <p>Ishan Karunaratne is a systems and network architect and Chief Technology Officer. He has more than two decades of experience across software engineering,
+        systems architecture, cloud infrastructure, and technology leadership, and is currently CTO at
+        Rehab Media Group. He is a US Army veteran who served in Operation Iraqi Freedom, holds a
+        Bachelor's degree from Charles Sturt University, and writes the developer publication TechEarl.</p>
+      </article>
+      <article>
+        <h3>What does he work on?</h3>
+        <p>Software architecture and distributed systems, Linux and DevOps infrastructure, application
+        security, and AI engineering. He built and operates DNS Checker, a domain intelligence platform
+        that analyzes more than 240 million domains a day, and has published more than 790 technical
+        articles at TechEarl.</p>
+      </article>
+      <article>
+        <h3>Which Ishan Karunaratne is this?</h3>
+        <p>Fair question, because there are several of us and search engines merge us
+        enthusiastically. I am not the frontend engineer at Moresand Technologies, and I am not the
+        founder and managing director of Sinhalite Holdings, the Sri Lankan hospitality and
+        consumer-goods group written up in the Daily Mirror and Life Online. He appears to be doing
+        very well. If you need compostable lunch sheets, that is the other one. If you need someone
+        to work out why the database falls over at 3am, you are on the right page. The reliable way
+        to tell us apart is my ORCID iD,
+        <a href="https://orcid.org/0009-0002-3088-0769">0009-0002-3088-0769</a>, which is unique
+        to me.</p>
+      </article>
+
+      <article>
+        <h3>Is he available for work?</h3>
+        <p>He is open to hands-on development work, which is still the part he enjoys most, as well as
+        advisory work, technical due diligence, architecture review, and fractional CTO
+        engagements. The fastest way to reach him is email.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="shell">
+    <h2>Get in touch</h2>
+    <p class="contact__lede">Development work, which is still the part I enjoy most, plus advisory,
+    technical due diligence, architecture review, and fractional CTO engagements. If you have a
+    system that needs to hold up, I am interested.</p>
+    <p class="contact__mail"><a href="mailto:ishan@techearl.com">ishan@techearl.com</a></p>
+    <ul class="contact__links">
+      <li><a href="https://www.linkedin.com/in/ishankarunaratne/" rel="me">LinkedIn</a></li>
+      <li><a href="https://github.com/ishankaru" rel="me">GitHub</a></li>
+      <li><a href="https://orcid.org/0009-0002-3088-0769" rel="me">ORCID</a></li>
+      <li><a href="https://x.com/ishankaru" rel="me">X</a></li>
+      <li><a href="https://techearl.com" rel="me">TechEarl</a></li>
+      <li><a href="https://dnschkr.com" rel="me">DNS Checker</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <p>&copy; <span id="yr">2026</span> Ishan Karunaratne</p>
+    <p class="foot__mono">ishankarunaratne.com</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Progressive enhancement only. The hidden state is added here, not in the stylesheet,
+  // so the page is fully readable if this never runs. A timeout reveals everything
+  // unconditionally, which covers headless renderers and background tabs where
+  // IntersectionObserver may not fire.
+  (function () {
+    if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+
+    var items = document.querySelectorAll('.track > li, .work__item, .practice > article');
+    if (!items.length) return;
+
+    var revealAll = function () {
+      items.forEach(function (el) { el.classList.add('in'); });
+    };
+
+    items.forEach(function (el, i) {
+      el.style.setProperty('--i', i % 8);
+      el.classList.add('reveal');
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '200px 0px 0px 0px' });
+
+    items.forEach(function (el) { io.observe(el); });
+
+    // Safety net: never leave anything hidden.
+    setTimeout(revealAll, 2500);
+    window.addEventListener('beforeprint', revealAll);
+  })();
+</script>
+</body>
+</html>
