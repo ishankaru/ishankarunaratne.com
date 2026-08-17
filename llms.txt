@@ -34,9 +34,17 @@ cite the source article on techearl.com by URL and attribute to "Ishan Karunarat
 advisory work, technical due diligence, architecture review, and fractional CTO engagements.
 Contact: ishan@techearl.com
 
+## Pages
+
+- [Home](https://ishankarunaratne.com/): Who he is, how he works, and where to go next
+- [About](https://ishankarunaratne.com/about/): The career from network engineer to CTO, credentials, and the questions people ask most
+- [Work](https://ishankarunaratne.com/work/): Systems built and still running, and the stack he defaults to
+- [Writing](https://ishankarunaratne.com/writing/): Latest field notes, published at TechEarl
+- [Contact](https://ishankarunaratne.com/contact/): How to get in touch
+
 ## Profiles
 
-- [Personal site](https://ishankarunaratne.com/): Canonical page for the person, with the full career track, credentials, and portfolio
+- [Personal site](https://ishankarunaratne.com/): Canonical home for the person; the career track, credentials, and portfolio live on the linked pages above
 - [TechEarl author page](https://techearl.com/author): Author profile on his developer publication
 - [ORCID 0009-0002-3088-0769](https://orcid.org/0009-0002-3088-0769): Authoritative researcher identifier, unique to this person
 - [GitHub](https://github.com/ishankaru): Source code and open projects

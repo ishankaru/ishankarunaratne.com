@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Ishan Karunaratne</title>
+<meta name="description" content="Get in touch about architecture, infrastructure, fractional CTO work, or anything else worth a conversation.">
+<link rel="canonical" href="https://ishankarunaratne.com/contact/">
+<meta name="author" content="Ishan Karunaratne">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ishankarunaratne.com/contact/">
+<meta property="og:title" content="Contact Ishan Karunaratne">
+<meta property="og:description" content="Get in touch about architecture, infrastructure, fractional CTO work, or anything else worth a conversation.">
+<meta property="og:image" content="https://ishankarunaratne.com/assets/ishan-karunaratne.webp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@ishankaru">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" href="/assets/fonts/schibsted-400-500-600-700-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://ishankarunaratne.com/"},
+ {"@type":"ListItem","position":2,"name":"Contact","item":"https://ishankarunaratne.com/contact/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://ishankarunaratne.com/contact/","url":"https://ishankarunaratne.com/contact/","name":"Contact",
+ "isPartOf":{"@id":"https://ishankarunaratne.com/#website"},
+ "about":{"@id":"https://ishankarunaratne.com/#person"},
+ "primaryImageOfPage":"https://ishankarunaratne.com/assets/ishan-karunaratne.webp"}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-11XFYLQ238"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-11XFYLQ238');
+</script>
+
+</head>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <div class="shell">
+    <a class="nav__brand" href="/">Ishan Karunaratne</a>
+    <ul class="nav__list"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/work/">Work</a></li><li><a href="/writing/">Writing</a></li><li><a href="/contact/" aria-current="page">Contact</a></li></ul>
+  </div>
+</nav>
+<header class="pagehead">
+  <div class="shell">
+    <p class="crumbs"><a href="/">Home</a> <span aria-hidden="true">/</span> Contact</p>
+    <h1>Get in touch</h1>
+    <p>Architecture reviews, infrastructure work, fractional CTO engagements, or just a good technical question.</p>
+  </div>
+</header>
+<main id="main">
+<section class="contact" id="contact">
+  <div class="shell">
+    <h2>Get in touch</h2>
+    <p class="contact__lede">Development work, which is still the part I enjoy most, plus advisory,
+    technical due diligence, architecture review, and fractional CTO engagements. If you have a
+    system that needs to hold up, I am interested.</p>
+    <p class="contact__mail"><a href="mailto:ishan@techearl.com">ishan@techearl.com</a></p>
+    <ul class="contact__links">
+      <li><a href="https://www.linkedin.com/in/ishankarunaratne/" rel="me">LinkedIn</a></li>
+      <li><a href="https://github.com/ishankaru" rel="me">GitHub</a></li>
+      <li><a href="https://orcid.org/0009-0002-3088-0769" rel="me">ORCID</a></li>
+      <li><a href="https://x.com/ishankaru" rel="me">X</a></li>
+      <li><a href="https://techearl.com" rel="me">TechEarl</a></li>
+      <li><a href="https://dnschkr.com" rel="me">DNS Checker</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="shell">
+    <p>&copy; <span id="yr">2026</span> Ishan Karunaratne</p>
+    <p class="foot__mono">ishankarunaratne.com</p>
+  </div>
+</footer>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Progressive enhancement only. The hidden state is added here, not in the stylesheet,
+  // so the page is fully readable if this never runs. A timeout reveals everything
+  // unconditionally, which covers headless renderers and background tabs where
+  // IntersectionObserver may not fire.
+  (function () {
+    if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+
+    var items = document.querySelectorAll('.track > li, .work__item, .practice > article');
+    if (!items.length) return;
+
+    var revealAll = function () {
+      items.forEach(function (el) { el.classList.add('in'); });
+    };
+
+    items.forEach(function (el, i) {
+      el.style.setProperty('--i', i % 8);
+      el.classList.add('reveal');
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '200px 0px 0px 0px' });
+
+    items.forEach(function (el) { io.observe(el); });
+
+    // Safety net: never leave anything hidden.
+    setTimeout(revealAll, 2500);
+    window.addEventListener('beforeprint', revealAll);
+  })();
+</script>
+</body>
+</html>

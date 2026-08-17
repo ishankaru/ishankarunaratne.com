@@ -1,4 +1,4 @@
-// Rebuild the "Latest writing" block in index.html from techearl.com's sitemap.
+// Rebuild the "Latest writing" block on /writing/ from techearl.com's sitemap.
 //
 // This exists so the page changes when there is genuinely something new to say,
 // rather than shuffling static content to look busy. If nothing has been
@@ -74,7 +74,7 @@ const latest = enriched
   .slice(0, COUNT);
 
 if (latest.length === 0) {
-  console.error("no articles resolved; leaving index.html untouched");
+  console.error("no articles resolved; leaving the writing page untouched");
   process.exit(1);
 }
 
@@ -97,19 +97,34 @@ ${items}
       </ul>
       ${END}`;
 
-const file = "index.html";
-const html = readFileSync(file, "utf8");
-const s = html.indexOf(START);
-const e = html.indexOf(END);
-if (s === -1 || e === -1) {
-  console.error(`markers ${START} / ${END} not found in ${file}`);
-  process.exit(1);
+// The writing list lives on /writing/. Any file carrying both markers gets the
+// same block, so moving or duplicating the list is a matter of adding the
+// markers rather than editing this script. A file without them is skipped
+// quietly; a run that matches nothing at all is an error worth failing on,
+// because it means the markers were lost in a redesign.
+const files = ["writing/index.html"];
+
+let changed = 0;
+let matched = 0;
+for (const file of files) {
+  const html = readFileSync(file, "utf8");
+  const s = html.indexOf(START);
+  const e = html.indexOf(END);
+  if (s === -1 || e === -1) continue;
+  matched++;
+
+  const next = html.slice(0, s) + block + html.slice(e + END.length);
+  if (next === html) continue;
+  writeFileSync(file, next);
+  changed++;
 }
 
-const next = html.slice(0, s) + block + html.slice(e + END.length);
-if (next === html) {
+if (matched === 0) {
+  console.error(`markers ${START} / ${END} not found in: ${files.join(", ")}`);
+  process.exit(1);
+}
+if (changed === 0) {
   console.log("no change");
   process.exit(0);
 }
-writeFileSync(file, next);
-console.log(`updated with ${latest.length} articles, newest ${latest[0].published.slice(0, 10)}`);
+console.log(`updated ${changed} file(s) with ${latest.length} articles, newest ${latest[0].published.slice(0, 10)}`);
