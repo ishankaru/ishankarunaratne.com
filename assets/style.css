@@ -113,6 +113,8 @@ a:hover { text-decoration-color: var(--signal); }
 @media (min-width: 56rem) {
   .masthead__grid { grid-template-columns: minmax(0, 1fr) 15rem; align-items: start; }
 }
+.h1-break { display: block; }
+
 .masthead h1 {
   color: var(--paper);
   font-size: var(--t-4);
@@ -339,3 +341,9 @@ a:hover { text-decoration-color: var(--signal); }
 .card h3 a { text-decoration: none; }
 .card h3 a:hover { color: var(--signal); }
 .card p { margin: 0; font-size: var(--t-sm); color: var(--body); }
+
+/* ---------- closing contact block (replaces the four-card teaser grid) ---------- */
+.closer { max-width: 56ch; font-size: var(--t-1); line-height: 1.55; margin: 0 0 2rem; }
+.closer__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin: 0; }
+.closer__alt { font-size: var(--t-sm); color: var(--ink-soft); }
+.closer__alt:hover { color: var(--signal); }
