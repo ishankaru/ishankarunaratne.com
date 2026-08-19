@@ -37,7 +37,7 @@ Contact: ishan@techearl.com
 ## Pages
 
 - [Home](https://ishankarunaratne.com/): Who he is, how he works, and where to go next
-- [About](https://ishankarunaratne.com/about/): The career from network engineer to CTO, credentials, and the questions people ask most
+- [About](https://ishankarunaratne.com/about/): The career from software engineer to CTO, credentials, and the questions people ask most
 - [Work](https://ishankarunaratne.com/work/): Systems built and still running, and the stack he defaults to
 - [Writing](https://ishankarunaratne.com/writing/): Latest field notes, published at TechEarl
 - [Contact](https://ishankarunaratne.com/contact/): How to get in touch
