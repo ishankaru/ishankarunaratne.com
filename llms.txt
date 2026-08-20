@@ -58,7 +58,7 @@ Contact: ishan@techearl.com
 - [DNS Checker](https://dnschkr.com): Domain intelligence platform analysing more than 240 million domains a day. DNS health checks, propagation, IP intelligence, and email authentication. Designed, written, and operated solo
 - [TechEarl](https://techearl.com): Developer publication, 790+ single-author articles on WordPress, Linux, DevOps, application security, databases, JavaScript, CSS, AI engineering, and regex
 - [Lipwalk](https://lipwalk.com): Privacy-first embeddable comment system with threaded discussion, reactions, star ratings, and AI moderation. No third-party tracking
-- [Daycare Index](https://daycareindex.com): Childcare directory covering 14,333 licensed Texas providers; search by city or ZIP, compare programs, ages, hours and locations, no paid placement
+- [Daycare Index](https://daycareindex.com): Childcare directory covering 14,333 licensed providers across Texas; search by city or ZIP and compare programs, ages, hours and locations; no paid placement or sponsored listings
 - [American Lawyers Directory](https://americanlawyersdirectory.com): Independent attorney directory covering 51 states and DC across eight practice areas, built on state bar records rather than paid placement
 - [Lyrics LK](https://lyrics-lk.com): Archive of Sinhala song lyrics from Sri Lanka
 - [Chords LK](https://chordslk.com): Guitar chords and tabs for Sinhala songs
