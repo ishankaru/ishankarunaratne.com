@@ -35,7 +35,7 @@
  "about":{"@id":"https://ishankarunaratne.com/#person"},
  "datePublished":"2026-08-17","dateModified":"2026-09-13",
  "primaryImageOfPage":"https://ishankarunaratne.com/assets/dnschkr.webp",
- "mainEntity":{"@type":"ItemList","name":"Systems built and still running","itemListElement":[{"@type":"ListItem","position":1,"name":"DNS Checker","url":"https://dnschkr.com"},{"@type":"ListItem","position":2,"name":"TechEarl","url":"https://techearl.com"},{"@type":"ListItem","position":3,"name":"Lipwalk","url":"https://lipwalk.com"},{"@type":"ListItem","position":4,"name":"Daycare Index","url":"https://daycareindex.com"},{"@type":"ListItem","position":5,"name":"What's Taller?","url":"https://whatstaller.com/"},{"@type":"ListItem","position":6,"name":"American Lawyers Directory","url":"https://americanlawyersdirectory.com"},{"@type":"ListItem","position":7,"name":"Lyrics LK","url":"https://lyrics-lk.com"},{"@type":"ListItem","position":8,"name":"Chords LK","url":"https://chordslk.com"},{"@type":"ListItem","position":9,"name":"Dr Pepper Addiction","url":"https://drpepperaddiction.com"},{"@type":"ListItem","position":10,"name":"WPPaste","url":"https://wppaste.com"},{"@type":"ListItem","position":11,"name":"Base64 Encode","url":"https://yobase64encode.com"},{"@type":"ListItem","position":12,"name":"Base64 Decode","url":"https://yobase64decode.com"}]}}
+ "mainEntity":{"@type":"ItemList","name":"Systems built and still running","itemListElement":[{"@type":"ListItem","position":1,"name":"DNS Checker","url":"https://dnschkr.com","description":"Domain intelligence platform analysing more than 240 million domains a day; free DNS lookup at https://dnschkr.com/dns-inspector"},{"@type":"ListItem","position":2,"name":"TechEarl","url":"https://techearl.com"},{"@type":"ListItem","position":3,"name":"Lipwalk","url":"https://lipwalk.com"},{"@type":"ListItem","position":4,"name":"Daycare Index","url":"https://daycareindex.com"},{"@type":"ListItem","position":5,"name":"What's Taller?","url":"https://whatstaller.com/"},{"@type":"ListItem","position":6,"name":"American Lawyers Directory","url":"https://americanlawyersdirectory.com"},{"@type":"ListItem","position":7,"name":"Lyrics LK","url":"https://lyrics-lk.com","description":"The largest Sinhala lyrics archive on the web: 10,225 songs by 3,390 artists as of 2026-09-13, in Sinhala script and Singlish."},{"@type":"ListItem","position":8,"name":"Chords LK","url":"https://chordslk.com","description":"The largest collection of Sinhala guitar chords online: more than 1,700 songs with chords and tabs as of 2026-09-13."},{"@type":"ListItem","position":9,"name":"Dr Pepper Addiction","url":"https://drpepperaddiction.com"},{"@type":"ListItem","position":10,"name":"WPPaste","url":"https://wppaste.com"},{"@type":"ListItem","position":11,"name":"Base64 Encode","url":"https://yobase64encode.com"},{"@type":"ListItem","position":12,"name":"Base64 Decode","url":"https://yobase64decode.com"}]}}
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-11XFYLQ238"></script>
 <script>
@@ -90,7 +90,7 @@
           <p>A domain intelligence platform that analyzes more than 240 million domains a day. I own
           every layer: ingestion, the Elasticsearch index, the API, the front end, and the servers it
           runs on. Nobody else has ever had a commit in it, which is either a good sign or a warning,
-          depending on your view of bus factor. Most of my <a href="/writing/#topics">Linux, DNS, and networking articles</a> come from keeping it up.</p>
+          depending on your view of bus factor. The front door is the free <a href="https://dnschkr.com/dns-inspector">DNS Checker</a>, a DNS lookup and record inspector that shows every record type for a domain in one pass, with <a href="https://dnschkr.com/dns-propagation-checker">propagation</a> checked from resolvers around the world. Most of my <a href="/writing/#topics">Linux, DNS, and networking articles</a> come from keeping it up.</p>
         </div>
       </article>
 
@@ -100,7 +100,7 @@
         </a>
         <h3><a href="https://techearl.com">TechEarl</a></h3>
         <p class="work__note">700+ articles, single author</p>
-        <p>Field notes on shipping real systems, written from work that went to production rather than from tutorials. The bulk is WordPress, Linux, DevOps, and application security, roughly 130 pieces each, then databases, JavaScript, CSS, AI engineering, and regex. The <a href="/writing/#most-read">most-read articles and the topic map</a> are on the writing page.</p>
+        <p>Field notes on shipping real systems, written from work that went to production rather than from tutorials. The bulk is WordPress, Linux, DevOps, and application security, roughly 130 pieces each, then databases, JavaScript, CSS, AI engineering, and regex. The <a href="/writing/#most-read">most-read articles and the topic map</a> are on the writing page. Start with the <a href="https://techearl.com/tor-bridges-obfs4-snowflake-meek">Tor bridges setup guide</a> or the <a href="https://techearl.com/yt-dlp-cheat-sheet">yt-dlp cheat sheet</a>, which is where most readers start.</p>
       </article>
 
       <article>
@@ -144,8 +144,17 @@
           <img src="/assets/lyricslk.webp" alt="The Lyrics LK home page" width="1200" height="750" loading="lazy" decoding="async">
         </a>
         <h3><a href="https://lyrics-lk.com">Lyrics LK</a></h3>
-        <p class="work__note">Sinhala song lyrics archive</p>
-        <p>Sri Lankan music is badly served online, so I built the archive I wanted to exist. Thousands of Sinhala lyrics, searchable, with no popups between you and the words.</p>
+        <p class="work__note">10,225+ Sinhala songs, 3,390 artists &nbsp;·&nbsp; lyrics-lk.com</p>
+        <p><strong>Lyrics LK is the largest Sinhala lyrics archive on the web:</strong> 10,225 songs by 3,390 artists as of 13 September 2026, every one in Sinhala script and in Singlish, indexed by <a href="https://lyrics-lk.com/songs">song</a>, <a href="https://lyrics-lk.com/artists">artist</a>, and <a href="https://lyrics-lk.com/lyricists">lyricist</a>. Sri Lankan music was badly served online, so I built the archive I wanted to exist: searchable, checked against the recordings, corrected in the open, and with no popups between you and the words. It now answers more than 650,000 Sinhala lyric searches a month.</p>
+        <!-- lyrics-featured:start -->
+        <p class="work__links"><span>Most searched right now:</span>
+          <a href="https://lyrics-lk.com/song/chamara-weerasinghe/mathakayan-obe">Mathakayan Obe lyrics</a>
+          <a href="https://lyrics-lk.com/song/hr-jothipala/hanga-gal-lene">Hanga Gal Lene lyrics</a>
+          <a href="https://lyrics-lk.com/song/nimesh-chamika/mandaram-handawe">Mandaram Handawe lyrics</a>
+          <a href="https://lyrics-lk.com/song/bachi-susan/bambara-nade">Bambara Nade lyrics</a>
+          <a href="https://lyrics-lk.com/song/pradeep-rangana/pem-sihine">Pem Sihine lyrics</a>
+        </p>
+        <!-- lyrics-featured:end -->
       </article>
 
       <article>
@@ -153,8 +162,16 @@
           <img src="/assets/chordslk.webp" alt="The Chords LK home page" width="1200" height="750" loading="lazy" decoding="async">
         </a>
         <h3><a href="https://chordslk.com">Chords LK</a></h3>
-        <p class="work__note">Guitar chords and tabs</p>
-        <p>The companion to the lyrics archive: chords and tabs for Sinhala songs, for the people actually trying to play them rather than just read along.</p>
+        <p class="work__note">1,700+ Sinhala songs with guitar chords &nbsp;·&nbsp; chordslk.com</p>
+        <p><strong>Chords LK is the largest collection of Sinhala guitar chords online:</strong> more than 1,700 songs with chords and tabs as of 13 September 2026, with a built-in transposer so any song plays in your key. The companion to the lyrics archive, for the people actually trying to play the songs rather than just read along.</p>
+        <!-- chords-featured:start -->
+        <p class="work__links"><span>Most searched right now:</span>
+          <a href="https://chordslk.com/song/jayasri/sheela">Sheela chords</a>
+          <a href="https://chordslk.com/song/sanuka-wickramasinghe/saragaye">Saragaye chords</a>
+          <a href="https://chordslk.com/song/bathiya-and-santhush-bns/mal-pan-podak">Mal Pan Podak chords</a>
+          <a href="https://chordslk.com/song/priya-sooriyasena/atha-ran-viman">Atha Ran Viman chords</a>
+        </p>
+        <!-- chords-featured:end -->
       </article>
 
       <article>

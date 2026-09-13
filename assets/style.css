@@ -256,6 +256,12 @@ a:hover { text-decoration-color: var(--signal); }
 .stack dt { font-weight: 700; color: var(--ink); font-size: var(--t-sm); }
 .stack dd { margin: 0.15rem 0 0; color: var(--ink-soft); }
 
+/* featured links inside a work entry: the pages people are actually searching for */
+.work__links { display: flex; flex-wrap: wrap; gap: 0.5rem 0.6rem; align-items: center; margin: 0.9rem 0 0; }
+.work__links span { font-size: var(--t-sm); color: var(--ink-soft); margin-right: 0.2rem; }
+.work__links a { font-size: var(--t-sm); font-weight: 600; color: var(--ink); text-decoration: none; padding: 0.3rem 0.7rem; border: 1px solid var(--rule); background: var(--paper); }
+.work__links a:hover, .work__links a:focus-visible { border-color: var(--signal); color: var(--signal); }
+
 /* credentials */
 .creds { margin: 0; display: grid; }
 @media (min-width: 46rem) { .creds { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 4rem; } }
