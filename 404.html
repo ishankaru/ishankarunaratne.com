@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found, Ishan Karunaratne</title>
+<meta name="description" content="That page is not here. The career, the work, the writing, and how to get in touch all are.">
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="Ishan Karunaratne">
+<link rel="preload" href="/assets/fonts/schibsted-400-500-600-700-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  .nf__code { font-size: var(--t-sm); color: var(--teal-lt); letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 1rem; font-weight: 600; }
+  .nf__path { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: var(--t-sm); color: var(--on-dark-soft); word-break: break-all; margin: 1.6rem 0 0; }
+  .nf__path span { color: var(--paper); }
+  .nf__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+  @media (min-width: 46rem) { .nf__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 4rem; } }
+  .nf__list a { font-weight: 700; color: var(--ink); text-decoration-color: var(--signal); }
+  .nf__list span { display: block; color: var(--ink-soft); font-size: var(--t-sm); margin-top: 0.15rem; max-width: 48ch; }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-11XFYLQ238"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-11XFYLQ238');
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <div class="shell">
+    <a class="nav__brand" href="/">Ishan Karunaratne</a>
+    <ul class="nav__list"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/work/">Work</a></li><li><a href="/writing/">Writing</a></li><li><a href="/contact/">Contact</a></li></ul>
+  </div>
+</nav>
+<header class="masthead">
+  <div class="shell">
+    <div class="masthead__grid">
+      <div class="masthead__id">
+        <p class="nf__code">Error 404</p>
+        <h1>Not <span class="h1-break">here.</span></h1>
+        <p class="masthead__role">The page you asked for does not exist on this site. <em>Everything that does is one click away.</em></p>
+        <p class="lede">Twenty-seven years of keeping systems running and I still could not stop a link from breaking. If you followed one from somewhere else, the page probably moved when I split this site into five in August 2026. The right one is below, or tell me which link sent you here and I will fix it.</p>
+        <p class="masthead__cta">
+          <a class="btn" href="/">Back to the front page</a>
+          <a href="/contact/">Report the broken link &rarr;</a>
+        </p>
+        <p class="nf__path" id="nfpath" hidden>You asked for <span id="nfreq"></span></p>
+      </div>
+      <div class="masthead__portrait">
+        <img src="/assets/ishan-karunaratne.webp" alt="Ishan Karunaratne" width="312" height="250">
+      </div>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="sec">
+  <div class="shell">
+    <h2>Pages that do exist</h2>
+    <ul class="nf__list">
+      <li><a href="/about/">About Ishan Karunaratne</a><span>Twenty-seven years from software engineer to Chief Technology Officer, the credentials, and the questions people ask most.</span></li>
+      <li><a href="/work/">Work and projects</a><span>DNS Checker, TechEarl, and the other twelve systems I built and still run, plus the stack behind them.</span></li>
+      <li><a href="/writing/">Writing</a><span>More than 700 articles at TechEarl on Linux, DevOps, security, databases, and AI engineering, with the most-read pieces.</span></li>
+      <li><a href="/contact/">Contact</a><span>Architecture reviews, infrastructure work, fractional CTO engagements, or a good technical question.</span></li>
+      <li><a href="https://techearl.com">TechEarl</a><span>If you were looking for a specific article, it lives on the publication itself.</span></li>
+      <li><a href="https://dnschkr.com">DNS Checker</a><span>If you were looking for a DNS tool, that is a different site entirely.</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="shell">
+    <p>&copy; <span id="yr">2026</span> Ishan Karunaratne</p>
+    <p class="foot__mono">ishankarunaratne.com</p>
+  </div>
+</footer>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Show the path that missed, so a screenshot of this page is enough to fix the link.
+  (function () {
+    var p = location.pathname + location.search;
+    if (p && p !== '/') {
+      document.getElementById('nfreq').textContent = p;
+      document.getElementById('nfpath').hidden = false;
+    }
+  })();
+</script>
+</body>
+</html>
