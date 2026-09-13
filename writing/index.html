@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Writing by Ishan Karunaratne</title>
-<meta name="description" content="Field notes on shipping real systems: Linux, DevOps, databases, security, and infrastructure, published at TechEarl.">
+<title>Writing by Ishan Karunaratne (TechEarl Field Notes)</title>
+<meta name="description" content="More than 700 articles on Linux, DevOps, databases, security, networking and AI at TechEarl, all from production work. What I cover, the most-read pieces, and the latest.">
 <link rel="canonical" href="https://ishankarunaratne.com/writing/">
 <meta name="author" content="Ishan Karunaratne">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ishankarunaratne.com/writing/">
-<meta property="og:title" content="Writing by Ishan Karunaratne">
-<meta property="og:description" content="Field notes on shipping real systems: Linux, DevOps, databases, security, and infrastructure, published at TechEarl.">
+<meta property="og:title" content="Writing by Ishan Karunaratne (TechEarl Field Notes)">
+<meta property="og:description" content="More than 700 articles on Linux, DevOps, databases, security, networking and AI at TechEarl, all from production work. What I cover, the most-read pieces, and the latest.">
 <meta property="og:image" content="https://ishankarunaratne.com/assets/ishan-karunaratne.webp">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@ishankaru">
@@ -29,10 +29,14 @@
  {"@type":"ListItem","position":2,"name":"Writing","item":"https://ishankarunaratne.com/writing/"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","@id":"https://ishankarunaratne.com/writing/","url":"https://ishankarunaratne.com/writing/","name":"Writing",
+{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://ishankarunaratne.com/writing/","url":"https://ishankarunaratne.com/writing/","name":"Writing by Ishan Karunaratne",
+ "description":"More than 700 articles on Linux, DevOps, databases, security, networking and AI at TechEarl, all from production work.",
  "isPartOf":{"@id":"https://ishankarunaratne.com/#website"},
+ "author":{"@id":"https://ishankarunaratne.com/#person"},
  "about":{"@id":"https://ishankarunaratne.com/#person"},
- "primaryImageOfPage":"https://ishankarunaratne.com/assets/ishan-karunaratne.webp"}
+ "datePublished":"2026-08-17","dateModified":"2026-09-13",
+ "primaryImageOfPage":"https://ishankarunaratne.com/assets/ishan-karunaratne.webp",
+ "mainEntity":{"@type":"ItemList","name":"Topics at TechEarl","itemListElement":[{"@type":"ListItem","position":1,"name":"Linux","url":"https://techearl.com/linux"},{"@type":"ListItem","position":2,"name":"DevOps","url":"https://techearl.com/devops"},{"@type":"ListItem","position":3,"name":"Security","url":"https://techearl.com/security"},{"@type":"ListItem","position":4,"name":"Databases","url":"https://techearl.com/database"},{"@type":"ListItem","position":5,"name":"WordPress","url":"https://techearl.com/wordpress"},{"@type":"ListItem","position":6,"name":"Networking","url":"https://techearl.com/network"},{"@type":"ListItem","position":7,"name":"AI engineering","url":"https://techearl.com/ai"},{"@type":"ListItem","position":8,"name":"JavaScript","url":"https://techearl.com/javascript"},{"@type":"ListItem","position":9,"name":"PHP","url":"https://techearl.com/php"},{"@type":"ListItem","position":10,"name":"CSS","url":"https://techearl.com/css"},{"@type":"ListItem","position":11,"name":"Regex","url":"https://techearl.com/regex"},{"@type":"ListItem","position":12,"name":"Cheat sheets","url":"https://techearl.com/cheat-sheets"}]}}
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-11XFYLQ238"></script>
 <script>
@@ -43,7 +47,6 @@
   gtag('config', 'G-11XFYLQ238');
 </script>
 
-</head>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -62,49 +65,182 @@
           <li><span aria-current="page">Writing</span></li>
         </ol>
       </nav>
-      <h1>What I have been writing</h1>
-      <p class="pagehead__deck">Field notes on shipping real systems, published at TechEarl and refreshed here as they go out.</p>
+      <h1>Writing by Ishan Karunaratne</h1>
+      <p class="pagehead__deck">Field notes from shipping real systems: more than 700 articles at TechEarl, every one written from work that reached production.</p>
     </div>
     <dl class="metarail">
-        <div class="metarail__row"><dt>Published at</dt><dd>TechEarl</dd></div>
-        <div class="metarail__row"><dt>Articles</dt><dd>790+</dd></div>
-        <div class="metarail__row"><dt>Mostly</dt><dd>Linux, DevOps, databases</dd></div>
+        <div class="metarail__row"><dt>Published at</dt><dd><a href="https://techearl.com">TechEarl</a></dd></div>
+        <div class="metarail__row"><dt>Articles</dt><dd>700+</dd></div>
+        <div class="metarail__row"><dt>Updated</dt><dd><time id="updated" datetime="2026-09-13">12 September 2026</time></dd></div>
     </dl>
   </div>
 </header>
 <main id="main">
+<section class="note" id="summary">
+  <div class="shell">
+    <p>I write <a href="https://techearl.com">TechEarl</a>, a single-author developer publication with more than 700 articles on Linux, DevOps, databases, application security, networking, WordPress, and AI engineering.</p>
+    <p>Every article starts as something I had to make work on a real server, for a real site, with real traffic. The command was run, the config was deployed, the fix held. Each piece carries its publish date and gets revised when the tool changes, so what you read is what currently works, not what worked in 2019.</p>
+  </div>
+</section>
+<section class="sec" id="topics">
+  <div class="shell">
+    <h2>What I write about</h2>
+    <div class="faq">
+      <article>
+        <h3><a href="https://techearl.com/linux">Linux</a></h3>
+        <p>Servers I actually run: systemd, SSH, storage, networking, and the commands that fix things at 3am.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/devops">DevOps</a></h3>
+        <p>CI/CD, Docker, deployment, monitoring, and the boring reliability work that keeps sites up.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/security">Security</a></h3>
+        <p>Application and server hardening, malware cleanup, and what real attacks on real sites look like.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/database">Databases</a></h3>
+        <p>MySQL, PostgreSQL, Elasticsearch, and Redis: schema, performance, backups, and recovery.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/wordpress">WordPress</a></h3>
+        <p>Running WordPress at scale, plugin and theme internals, WP-CLI, and cleaning up after compromises.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/network">Networking</a></h3>
+        <p>DNS, Tor, VPNs, proxies, and the diagnostics I use when the network is the problem.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/ai">AI engineering</a></h3>
+        <p>LLM applications, batch APIs, cost control, agents, and evaluation, from building them for production.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/javascript">JavaScript</a></h3>
+        <p>Node, browser scripting, and the tooling around modern front ends.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/php">PHP</a></h3>
+        <p>Modern PHP, Composer, and the language underneath most of the web I maintain.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/css">CSS</a></h3>
+        <p>Layout, typography, and the parts of CSS that changed while nobody was looking.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/regex">Regex</a></h3>
+        <p>Patterns that work across engines, with the edge cases spelled out.</p>
+      </article>
+      <article>
+        <h3><a href="https://techearl.com/cheat-sheets">Cheat sheets</a></h3>
+        <p>One-page references for yt-dlp, torrc, regex, and other tools I reach for constantly.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="sec" id="most-read">
+  <div class="shell">
+    <h2>Most read in the last 90 days</h2>
+    <p>Ranked by readers, from TechEarl's analytics, as of 13 September 2026. Tor, yt-dlp, and the cheat sheets carry the site; the pattern is that people arrive with a specific job and want the exact command.</p>
+      <ol class="writing">
+        <li>
+          <a href="https://techearl.com/tor-bridges-obfs4-snowflake-meek">Tor Bridges (2026): obfs4, Snowflake, meek Setup Guide</a>
+          <span>How to reach Tor when the direct route is blocked, with each bridge type set up and tested.</span>
+          <time datetime="2026-05-17">17 May 2026</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/tor-country-codes-exit-exclude-nodes">Tor Country Codes List: Set Exit Nodes by Country (torrc)</a>
+          <span>The full country code list plus the torrc directives to pin or exclude exit nodes.</span>
+          <time datetime="2025-06-21">21 June 2025</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/yt-dlp-cheat-sheet">yt-dlp Cheat Sheet: Commands for Video, Audio, Subtitles (2026)</a>
+          <span>Every yt-dlp command I use, grouped by job, with the flags that changed this year.</span>
+          <time datetime="2026-06-01">1 June 2026</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/download-youtube-playlist">Download a YouTube Playlist or Entire Channel with yt-dlp</a>
+          <span>Playlists, channels, archives, and rate limits, with the exact commands.</span>
+          <time datetime="2026-06-01">1 June 2026</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/torrc-cheat-sheet">torrc Cheat Sheet (2026): Every Tor Config Directive</a>
+          <span>The Tor configuration file, directive by directive, with the defaults and the gotchas.</span>
+          <time datetime="2026-05-17">17 May 2026</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/how-to-export-and-import-putty-settings">Export and Import PuTTY Sessions and Settings (Registry Backup Guide, 2026)</a>
+          <span>Moving PuTTY sessions between Windows machines through the registry, safely.</span>
+          <time datetime="2025-06-21">21 June 2025</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/regex-cheat-sheet">Regex Cheat Sheet: Syntax, Examples and Engine Support</a>
+          <span>Syntax across engines, with the differences between PCRE, JavaScript, and Python called out.</span>
+          <time datetime="2025-06-21">21 June 2025</time>
+        </li>
+        <li>
+          <a href="https://techearl.com/wordpress-fake-cloudflare-verification-clickfix">WordPress Fake Cloudflare Verification (ClickFix): Detection and Removal</a>
+          <span>A live malware campaign on WordPress sites, how to spot it, and how to remove it.</span>
+          <time datetime="2026-05-19">19 May 2026</time>
+        </li>
+      </ol>
+  </div>
+</section>
 <section class="sec" id="writing">
   <div class="shell">
     <h2>Latest writing</h2>
+    <p>Refreshed automatically from TechEarl each morning, so this list only changes when something new has actually gone out.</p>
     <!-- writing:start -->
       <ul class="writing">
         <li>
-          <a href="https://techearl.com/bulk-process-wordpress-posts-ai">Process WordPress Posts with AI at Half the Cost (Batch API)</a>
-          <span>Enrich thousands of WordPress posts or ACF fields with AI using the true batch API: 50% cheaper, with a WP-CLI and PHP example.</span>
-          <time datetime="2026-06-30">30 June 2026</time>
+          <a href="https://techearl.com/wordpress-code-snippet-sandbox">WordPress Sandbox: Test and Share Code Snippets Online</a>
+          <span>A WordPress sandbox that boots a real site in your browser, runs the snippet you paste, and links every core function and hook in it to a reference page</span>
+          <time datetime="2026-08-23">23 August 2026</time>
         </li>
         <li>
-          <a href="https://techearl.com/llm-batch-api">LLM Batch API: Cut Your Bill in Half (Claude, OpenAI, Gemini)</a>
-          <span>Every LLM batch API is 50% off. Claude vs OpenAI vs Gemini batch processing compared, ten jobs worth batching, plus a runnable Node example.</span>
-          <time datetime="2026-06-30">30 June 2026</time>
+          <a href="https://techearl.com/there-are-two-types-of-people-jokes">There Are Two Types of People: 600+ Jokes, Sorted by Type</a>
+          <span>600+ &amp;#x27;there are two types of people&amp;#x27; jokes in one place, sorted by who they are about: developers, sysadmins, Linux users, parents, remote workers, office</span>
+          <time datetime="2026-05-29">29 May 2026</time>
         </li>
         <li>
-          <a href="https://techearl.com/nano-banana-batch-api">Nano Banana Batch API: Halve Your Gemini Image Bill (2026)</a>
-          <span>Bulk image generation with the Gemini Batch API and Nano Banana at 50% off: per-image pricing, the true-batch flow, and a Node example.</span>
-          <time datetime="2026-06-30">30 June 2026</time>
+          <a href="https://techearl.com/using-ai-in-a-wordpress-agency">How Small WordPress Agencies Can Use AI in 2026 (Practical Guide)</a>
+          <span>What WordPress agencies should adopt first, what to skip, budget realities, and the four operational shifts that turn AI from a curiosity into</span>
+          <time datetime="2026-05-28">28 May 2026</time>
         </li>
         <li>
-          <a href="https://techearl.com/reduce-ai-api-costs">How to Cut Your AI API Bill in 2026 (Every Lever That Works)</a>
-          <span>Lower your LLM API bill with every lever that works: right-size the model, trim tokens, cache the prefix, batch non-urgent work, and skip the tool fees.</span>
-          <time datetime="2026-06-30">30 June 2026</time>
+          <a href="https://techearl.com/agile-and-scrum-jokes">Agile, Scrum, and Jira Jokes: Sprints, Standups, and Retros</a>
+          <span>425+ jokes on one page, grouped by subject: agile coach jokes, scrum master jokes, sprint planning jokes, sprint retrospective jokes, jira ticket jokes</span>
+          <time datetime="2026-05-27">27 May 2026</time>
         </li>
         <li>
-          <a href="https://techearl.com/mac-set-date-command-line">Set the Date and Time From the macOS Command Line (BSD date)</a>
-          <span>Set the macOS clock from Terminal with the BSD date command: MMDDhhmm[[CC]YY], not date -I (that is a GNU output flag). Turn off network time first or</span>
-          <time datetime="2026-06-01">1 June 2026</time>
+          <a href="https://techearl.com/autocorrect-jokes">Everyday Tech Jokes: Autocorrect, GPS, Smart TVs, and Spam Calls</a>
+          <span>475+ jokes on one page, grouped by subject: gps navigation jokes, smart tv jokes, smartwatch jokes, spam call jokes, online banking jokes, and more.</span>
+          <time datetime="2026-05-27">27 May 2026</time>
         </li>
       </ul>
       <!-- writing:end -->
+  </div>
+</section>
+<section class="sec" id="method">
+  <div class="shell">
+    <h2>How these get written</h2>
+    <div class="faq">
+      <article>
+        <h3>Where does the material come from?</h3>
+        <p>From the systems on the <a href="/work/">work page</a> and from the platforms I run as CTO. If a command or a config appears in an article, I ran it on a box I was responsible for before I wrote it down.</p>
+      </article>
+      <article>
+        <h3>Why the dates matter</h3>
+        <p>Tools change. yt-dlp flags, Tor bridge types, and WordPress internals all moved in the last year. Every article shows when it was published and when it was last revised, and the year in a title means the piece was checked against that year's release.</p>
+      </article>
+      <article>
+        <h3>What happens when something is wrong?</h3>
+        <p>It gets fixed in the open. Corrections are made in the article itself, and readers who catch a mistake get credit for it. The fastest way to report one is the <a href="/contact/">contact page</a>.</p>
+      </article>
+      <article>
+        <h3>Where should I start?</h3>
+        <p>The <a href="https://techearl.com/cheat-sheets">cheat sheets</a> if you have a job to do right now, the <a href="https://techearl.com/security">security</a> section if you run WordPress in production, and the <a href="https://techearl.com/ai">AI engineering</a> pieces if you are paying an LLM bill and would like it smaller.</p>
+      </article>
+    </div>
   </div>
 </section>
 </main>

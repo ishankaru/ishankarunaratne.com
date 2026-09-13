@@ -31,12 +31,12 @@ jobs:
 
       - name: Commit if the list changed
         run: |
-          if git diff --quiet -- index.html; then
+          if git diff --quiet -- writing/index.html sitemap.xml; then
             echo "No new writing; nothing to commit."
             exit 0
           fi
           git config user.name "ishankaru"
           git config user.email "ishankaru@gmail.com"
-          git add index.html
+          git add writing/index.html sitemap.xml
           git commit -m "Refresh latest writing"
           git push

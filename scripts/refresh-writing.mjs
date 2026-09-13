@@ -113,9 +113,20 @@ for (const file of files) {
   if (s === -1 || e === -1) continue;
   matched++;
 
-  const next = html.slice(0, s) + block + html.slice(e + END.length);
+  let next = html.slice(0, s) + block + html.slice(e + END.length);
   if (next === html) continue;
+  // A real change dates the page: the visible "Updated" row, dateModified in
+  // the CollectionPage schema, and the sitemap entry, so the freshness signal
+  // is only ever claimed when the content actually moved.
+  const today = new Date().toISOString().slice(0, 10);
+  next = next
+    .replace(/(<time id="updated" datetime=")[^"]+(">)[^<]+(<\/time>)/, `$1${today}$2${fmt(today)}$3`)
+    .replace(/("dateModified":")[^"]+(")/, `$1${today}$2`);
   writeFileSync(file, next);
+  try {
+    const sm = readFileSync("sitemap.xml", "utf8");
+    writeFileSync("sitemap.xml", sm.replace(/(<loc>https:\/\/ishankarunaratne\.com\/writing\/<\/loc><lastmod>)[^<]+/, `$1${today}`));
+  } catch {}
   changed++;
 }
 
