@@ -35,5 +35,6 @@ node ~/.claude/skills/ik-super-seo/scripts/gsc-top-pages.mjs lyrics-lk.com 90 10
 node ~/.claude/skills/ik-super-seo/scripts/gsc-top-pages.mjs chordslk.com 90 6
 ```
 
-Take the top four or five pages, use the leading query as the link text, and update the
-"as of" date and the song/artist counts (from the site's home page) in the same edit.
+Take the top four or five pages and write them into the sentence between the markers with the
+leading query as the link text (artist name in plain text, song plus "lyrics" or "chords" as the
+anchor). Update the "as of" date and the song/artist counts (from the site's home page) in the same edit.
