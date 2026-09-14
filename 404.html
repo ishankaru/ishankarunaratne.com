@@ -13,11 +13,52 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
-  .nf__code { font-size: var(--t-sm); color: var(--teal-lt); letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 1rem; font-weight: 600; }
-  .nf__path { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: var(--t-sm); color: var(--on-dark-soft); word-break: break-all; margin: 1.6rem 0 0; }
-  .nf__path span { color: var(--paper); }
+  /* Everything below is only ever used on this page, so it lives here rather than
+     in the shared stylesheet that the other five pages download. */
+  .nf { background: var(--ink); color: var(--on-dark); padding-block: clamp(2.5rem, 7vw, 5rem) clamp(3.5rem, 9vw, 7rem); }
+
+  .nf__hero { position: relative; display: grid; place-items: center; text-align: center; padding-block: clamp(2.5rem, 7vw, 5rem); }
+  .nf__ghost {
+    position: absolute; inset: 0; margin: 0; display: grid; place-items: center;
+    pointer-events: none; user-select: none; -webkit-user-select: none;
+    font-size: clamp(11rem, 32vw, 23rem); font-weight: 800; line-height: 0.78;
+    letter-spacing: -0.065em; color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-9%);
+  }
+  .nf__lede { position: relative; max-width: 46ch; }
+  .nf__code {
+    margin: 0 0 0.85rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: var(--t-sm); font-weight: 600; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--signal-lt);
+  }
+  .nf h1 { color: var(--paper); font-size: var(--t-4); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; }
+  .nf__deck { margin: 1.15rem 0 0; color: var(--on-dark-soft); font-size: var(--t-1); line-height: 1.5; }
+  .nf__path {
+    margin: 1.5rem 0 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: var(--t-sm); color: var(--on-dark-soft);
+  }
+  .nf__path span { color: var(--paper); overflow-wrap: anywhere; }
   .nf__path a { color: var(--teal-lt); }
-  .masthead { min-height: 60vh; }
+
+  .nf__h {
+    margin: clamp(2rem, 5vw, 3.25rem) 0 1.1rem; text-align: center; font-size: var(--t-sm);
+    font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--on-dark-soft);
+  }
+  .nf__cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  @media (min-width: 46rem) { .nf__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .nf__cards a {
+    display: grid; gap: 0.3rem; height: 100%; padding: 1.2rem 1.35rem; text-decoration: none;
+    border: 1px solid var(--rule-dk); background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease);
+  }
+  .nf__cards a:hover, .nf__cards a:focus-visible {
+    border-color: var(--signal); background: rgba(255, 255, 255, 0.05); transform: translateY(-2px);
+  }
+  .nf__card-t { color: var(--paper); font-weight: 700; font-size: var(--t-0); }
+  .nf__card-t::after { content: " \2192"; color: var(--signal-lt); }
+  .nf__card-d { color: var(--on-dark-soft); font-size: var(--t-sm); line-height: 1.5; }
+  .nf__cta { margin: clamp(2rem, 5vw, 3rem) 0 0; text-align: center; }
+  @media (prefers-reduced-motion: reduce) { .nf__cards a:hover, .nf__cards a:focus-visible { transform: none; } }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-11XFYLQ238"></script>
 <script>
@@ -35,22 +76,54 @@
     <ul class="nav__list"><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/work/">Work</a></li><li><a href="/writing/">Writing</a></li><li><a href="/contact/">Contact</a></li></ul>
   </div>
 </nav>
-<header class="masthead">
+<main id="main">
+<section class="nf">
   <div class="shell">
-    <p class="nf__code">Error 404</p>
-    <h1>Not <span class="h1-break">here.</span></h1>
-    <p class="masthead__role">That page does not exist on this site. <em>These do.</em></p>
-    <p class="masthead__cta">
-      <a class="btn" href="/">Front page</a>
-      <a href="/about/">About</a>
-      <a href="/work/">Work</a>
-      <a href="/writing/">Writing</a>
-      <a href="/contact/">Contact</a>
-    </p>
-    <p class="nf__path" id="nfpath" hidden>You asked for <span id="nfreq"></span>. If a link sent you here, <a href="/contact/">tell me</a> and I will fix it.</p>
+
+    <div class="nf__hero">
+      <p class="nf__ghost" aria-hidden="true">404</p>
+      <div class="nf__lede">
+        <p class="nf__code">EHOSTUNREACH &middot; 404</p>
+        <h1>No route to that host.</h1>
+        <p class="nf__deck">The path you asked for is not on this server. It moved, it was renamed, or
+        it never existed. Everything else is still up and answering.</p>
+        <p class="nf__path" id="nfpath" hidden>You asked for <span id="nfreq"></span>. If a link sent you here, <a href="/contact/">tell me</a> and I will fix it.</p>
+      </div>
+    </div>
+
+    <p class="nf__h">Try one of these instead</p>
+    <ul class="nf__cards">
+      <li>
+        <a href="/about/">
+          <span class="nf__card-t">Career and credentials</span>
+          <span class="nf__card-d">Twenty-seven years newest first, what backs it up, and the questions I get asked most.</span>
+        </a>
+      </li>
+      <li>
+        <a href="/work/">
+          <span class="nf__card-t">Projects and stack</span>
+          <span class="nf__card-d">Twelve systems built and still running, from DNS Checker to a Sinhala lyrics archive.</span>
+        </a>
+      </li>
+      <li>
+        <a href="/writing/">
+          <span class="nf__card-t">Technical writing</span>
+          <span class="nf__card-d">More than 700 field notes at TechEarl, every one from work that reached production.</span>
+        </a>
+      </li>
+      <li>
+        <a href="/contact/">
+          <span class="nf__card-t">Contact and availability</span>
+          <span class="nf__card-d">Architecture reviews, infrastructure and platform work, fractional CTO engagements.</span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="nf__cta"><a class="btn" href="/">Back to the front page</a></p>
+
   </div>
-</header>
-<main id="main"></main>
+</section>
+</main>
 <footer class="foot" role="contentinfo">
   <div class="shell">
     <div class="foot__grid">
@@ -111,6 +184,11 @@
     if (p && p !== '/') {
       document.getElementById('nfreq').textContent = p;
       document.getElementById('nfpath').hidden = false;
+      // Log the miss so broken inbound links surface in the reports rather than
+      // only in whatever someone happens to email me.
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_not_found', { requested_path: p, referrer: document.referrer || '(none)' });
+      }
     }
   })();
 </script>
