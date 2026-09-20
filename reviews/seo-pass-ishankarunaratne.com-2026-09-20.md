@@ -111,6 +111,17 @@ console errors beyond the GA4 beacon that localhost blocks.
    claims ownership of it in `owns` and on `/work/`. That is consistent (the rule is about not
    implying reviewer expertise on the car-seat site, not about concealing who built it), but
    flagging it since the two claims now coexist publicly.
+6. **None of the three reciprocates the ownership claim.** Checked after the push: no
+   `ishankarunaratne.com` reference in the HTML of any of the three, and no `Person` node.
+   babycarseat.info and jwaedge.com emit a bare `WebSite`; insidedns.com emits no structured
+   data at all. This site now asserts `owns` for all three, but an unreciprocated claim means
+   Google resolves each site to its own anonymous publisher rather than consolidating onto
+   `https://ishankarunaratne.com/#person`, which is the whole point of the graph. jwaedge.com
+   and insidedns.com should add a `publisher`/`creator` pointing at that `@id`, plus a link
+   back. babycarseat.info **cannot**, by its own standing rule against a named owner or
+   `Person` markup on the public site, so that one stays one-directional on purpose and the
+   entity there will not consolidate. That is a real, accepted cost of the rule, not an
+   oversight.
 
 ## Resubmit
 
