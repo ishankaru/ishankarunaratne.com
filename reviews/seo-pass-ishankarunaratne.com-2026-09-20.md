@@ -114,17 +114,33 @@ console errors beyond the GA4 beacon that localhost blocks.
 
 ## Resubmit
 
-Not yet submitted; the commit is local and unpushed pending the `gh` identity mismatch noted
-below. After deploy:
+Pushed as `04e27de` and live on GitHub Pages ~45s later. Submitted 20 September 2026:
 
 ```sh
+cd ~/dev/node/2026/ishankarunaratne.com
 S=~/.claude/skills/ik-super-seo/scripts
-C=~/dev/node/2026/babycarseat.info/sa-creds
-node $S/google-index-submit.mjs --site ishankarunaratne.com --creds $C \
+node $S/google-index-submit.mjs --site ishankarunaratne.com --creds ~/dev/node/2026/babycarseat.info/sa-creds \
   https://ishankarunaratne.com/ https://ishankarunaratne.com/work/ https://ishankarunaratne.com/about/ \
   https://ishankarunaratne.com/writing/ https://ishankarunaratne.com/contact/
-node $S/indexnow-submit.mjs --site ishankarunaratne.com <same urls>
+# -> Done: 5/5 submitted. Live accounts: 1/14 (only api-project-44233931070 is an
+#    Owner of this property; the other 13 keys 403 on URL ownership).
+
+node $S/indexnow-submit.mjs --site ishankarunaratne.com --public . <same five urls>
+# -> IndexNow: 5 URL(s), key 667bfcc0… -> HTTP 200 OK
 ```
+
+Two things to get right when repeating this, both of which bit on the first attempt:
+
+1. **Do not collect the URLs in a shell variable.** zsh does not word-split an unquoted
+   `$U`, so `node … $U` hands the script all five URLs as a single argv element and it
+   reports "1 URL(s)" and submits one malformed URL. Pass the URLs literally, or use
+   `${=U}`.
+2. **Run IndexNow from this project directory with `--public .`.** The key file
+   (`667bfcc0cbb5ce2d4e504d0853990486.txt`) lives at the repo root, not in a `public/`
+   dir. Run from anywhere else and `findKey()` picks up whatever `./public/<hex>.txt` is
+   in the current project: the first attempt ran from the techearl checkout and submitted
+   under techearl's key with a `keyLocation` that 404s on this host, which IndexNow
+   accepted as 202 and will then fail validation. Harmless, but it is a wasted submission.
 
 Re-run `gsc-page-queries.mjs --site ishankarunaratne.com /work/ 180` in two to four weeks.
 Re-run the striking-distance report on babycarseat.info and jwaedge.com then too; both should
@@ -132,8 +148,14 @@ have a first query profile by that point.
 
 ## Identity note
 
-At the time of this pass, `git config` in this repo is correct (`ishankaru
-<ishankaru@gmail.com>`, matching every prior commit), but the `gh` CLI active account is
-`ishanrmn`, not `ishankaru`. The remote is HTTPS, so a push would go through the gh credential
-helper under the wrong account. Committed locally and stopped there rather than switching the
-account unprompted.
+During this pass the `gh` CLI active account was `ishanrmn`, not `ishankaru`, while `git
+config` in the repo was correct. The remote is HTTPS, so a push would have gone through the gh
+credential helper under the wrong account. Halted, surfaced it, and pushed only after the owner
+said to switch: `gh auth switch --user ishankaru`. Both signals verified before the push, and
+the remote HEAD is authored `ishankaru <ishankaru@gmail.com>`.
+
+A scheduled "Refresh latest writing" commit (`52a34bd`) landed on the remote in the meantime and
+touched `sitemap.xml` and `writing/index.html`. Rebased onto it rather than merging;
+`writing/index.html` auto-merged and only `sitemap.xml` conflicted, on the `/writing/` `lastmod`
+(remote 2026-09-14 against this pass's 2026-09-20). Resolved to 2026-09-20, which is correct
+because that page did change today.
