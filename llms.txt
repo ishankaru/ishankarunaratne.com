@@ -38,7 +38,7 @@ Contact: ishan@techearl.com
 
 - [Home](https://ishankarunaratne.com/): Who he is, how he works, and where to go next
 - [About](https://ishankarunaratne.com/about/): The career from software engineer to CTO, credentials, and the questions people ask most
-- [Work](https://ishankarunaratne.com/work/): Systems built and still running, and the stack he defaults to
+- [Work](https://ishankarunaratne.com/work/): Fifteen systems built and still running, and the stack he defaults to
 - [Writing](https://ishankarunaratne.com/writing/): Latest field notes, published at TechEarl
 - [Contact](https://ishankarunaratne.com/contact/): How to get in touch
 
@@ -61,9 +61,12 @@ Contact: ishan@techearl.com
 - [Lipwalk](https://lipwalk.com): Privacy-first embeddable comment system with threaded discussion, reactions, star ratings, and AI moderation. No third-party tracking
 - [Daycare Index](https://daycareindex.com): Childcare directory covering 14,333 licensed providers across Texas; search by city or ZIP and compare programs, ages, hours and locations; no paid placement or sponsored listings
 - [American Lawyers Directory](https://americanlawyersdirectory.com): Independent attorney directory covering 51 states and DC across eight practice areas, built on state bar records rather than paid placement
+- [BabyCarSeat.info](https://babycarseat.info/): US baby car seat catalog built from manufacturer manuals, 228 models across 15 brands compared on published weight, height and age limits, with infant, convertible, rotating and booster seat hubs, US car seat laws by state, and the NHTSA recall list (71 recalls since 2010, refreshed daily). Research summaries only; no hands-on or crash testing
 - [Lyrics LK](https://lyrics-lk.com): The largest Sinhala lyrics archive on the web, 10,225+ songs by 3,390 artists (as of 2026-09-13) in Sinhala script and Singlish, indexed by song, artist and lyricist
 - [Chords LK](https://chordslk.com): The largest collection of Sinhala guitar chords online, 1,700+ songs with chords, tabs and a transposer (as of 2026-09-13)
+- [JWA Edge](https://jwaedge.com/): Jurassic World Alive dinosaur database exported from the game's own data, 521 creatures, 2,005 ability records and 250 fusion recipes, with stat comparison, hybrids, abilities, raid strategies and tournament leaderboards, regenerated each patch
 - [WPPaste](https://wppaste.com): Code paste tool for WordPress developers, with WordPress functions and hooks auto-linked to the documentation
+- [InsideDNS](https://insidedns.com/): Three original browser games that teach how DNS works (DNS Rush, It's Always DNS, Packet Quest) plus a twelve-mission DNS learning path with experiments, explanation checks and teaching notes. Learning records are browser-local and self-reported, not a verified qualification
 
 ## Optional
 
