@@ -38,7 +38,7 @@ Contact: ishan@techearl.com
 
 - [Home](https://ishankarunaratne.com/): Who he is, how he works, and where to go next
 - [About](https://ishankarunaratne.com/about/): The career from software engineer to CTO, credentials, and the questions people ask most
-- [Work](https://ishankarunaratne.com/work/): Seventeen systems built and still running, and the stack he defaults to
+- [Work](https://ishankarunaratne.com/work/): Eighteen systems built and still running, and the stack he defaults to
 - [Writing](https://ishankarunaratne.com/writing/): Latest field notes, published at TechEarl
 - [Contact](https://ishankarunaratne.com/contact/): How to get in touch
 
@@ -59,6 +59,7 @@ Contact: ishan@techearl.com
 - [TechEarl](https://techearl.com): Developer publication, 700+ single-author articles on WordPress, Linux, DevOps, application security, databases, JavaScript, CSS, AI engineering, and regex
 - [Kendraya](https://kendraya.com/): Free birth chart calculator with Vedic (sidereal, Lahiri) and Western (tropical) astrology charts: rising sign, Moon sign, houses, nakshatra and Vimshottari dasha periods. Daily horoscope for all twelve signs at https://kendraya.com/horoscope, Mercury retrograde dates at https://kendraya.com/retrograde, zodiac sign dates at https://kendraya.com/zodiac-sign-dates, and a baby name finder at https://kendraya.com/baby-name-finder
 - [ChalkStash](https://chalkstash.com/): Classroom wish lists for PreK to 12 teachers. Teachers list what their classroom needs and share one link; families and neighbors buy from the retailer and the teacher confirms delivery. About 1,300 teacher supplies with live Amazon prices at https://chalkstash.com/teacher-supplies, browsable by grade (https://chalkstash.com/grades/kindergarten) and need, plus the US school directory with school-email role verification. Launched 2026-11-01.
+- [Energy Drink Flavors](https://energydrinkflavors.com/): Fan and reference site listing energy drink flavors by brand. 480 flavors from 30 brands (443 on shelves, as of 2026-11-17), each with caffeine per can and per fl oz sourced from the printed label or the brand's product page, with status and sizes. Monster Energy flavors at https://energydrinkflavors.com/monster-energy/, Red Bull flavors at https://energydrinkflavors.com/red-bull/, Alani Nu flavors at https://energydrinkflavors.com/alani-nu/ and Celsius flavors at https://energydrinkflavors.com/celsius/, an energy drink caffeine chart at https://energydrinkflavors.com/energy-drink-caffeine-chart/ and a compare tool at https://energydrinkflavors.com/compare-energy-drinks/. Not affiliated with any brand. Launched 2026-11-17.
 - [What's Taller?](https://whatstaller.com/): Free height comparison tool for "what's taller?" questions. 293 real and fictional subjects (landmarks, monsters, dinosaurs, vehicles, people) rendered at true relative scale, each with a cited measurement source, plus shareable scenes and image export
 - [Lipwalk](https://lipwalk.com): Privacy-first embeddable comment system with threaded discussion, reactions, star ratings, and AI moderation. No third-party tracking
 - [Daycare Index](https://daycareindex.com): Childcare directory covering 14,333 licensed providers across Texas; search by city or ZIP and compare programs, ages, hours and locations; no paid placement or sponsored listings
