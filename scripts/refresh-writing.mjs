@@ -55,31 +55,81 @@ async function enrich(entry) {
   };
 }
 
-const xml = await get(SITEMAP);
-const candidates = articlesFromSitemap(xml)
-  .sort((a, b) => b.lastmod.localeCompare(a.lastmod))
-  .slice(0, COUNT * 3);
+// Publish dates live in a small cache so each run only fetches articles it
+// has never seen. A sitemap lastmod window is not enough: a bulk edit gives
+// hundreds of old articles a newer lastmod than a genuinely new article, which
+// then never makes the list.
+const CACHE = "scripts/writing-dates.json";
+let cache = {};
+try {
+  cache = JSON.parse(readFileSync(CACHE, "utf8"));
+} catch {}
 
-const enriched = [];
-for (const c of candidates) {
+const xml = await get(SITEMAP);
+const articles = articlesFromSitemap(xml);
+const unseen = articles.filter((a) => !cache[a.url]);
+
+async function pool(items, size, fn) {
+  const queue = [...items];
+  await Promise.all(
+    Array.from({ length: size }, async () => {
+      while (queue.length) await fn(queue.shift());
+    })
+  );
+}
+
+const fresh = {};
+await pool(unseen, 6, async (a) => {
   try {
-    enriched.push(await enrich(c));
+    const e = await enrich(a);
+    cache[a.url] = e.published;
+    fresh[a.url] = e;
   } catch (e) {
-    console.error(`skip ${c.url}: ${e.message}`);
+    console.error(`skip ${a.url}: ${e.message}`);
+  }
+});
+
+// Drop retired URLs so the cache tracks the live sitemap.
+const live = new Set(articles.map((a) => a.url));
+for (const url of Object.keys(cache)) if (!live.has(url)) delete cache[url];
+const sortedCache = Object.fromEntries(Object.entries(cache).sort(([a], [b]) => a.localeCompare(b)));
+writeFileSync(CACHE, JSON.stringify(sortedCache, null, 1) + "\n");
+
+const newest = articles
+  .filter((a) => cache[a.url])
+  .sort((a, b) => cache[b.url].localeCompare(cache[a.url]))
+  .slice(0, COUNT);
+
+const latest = [];
+for (const a of newest) {
+  try {
+    latest.push(fresh[a.url] || (await enrich(a)));
+  } catch (e) {
+    console.error(`skip ${a.url}: ${e.message}`);
   }
 }
 
-const latest = enriched
-  .sort((a, b) => b.published.localeCompare(a.published))
-  .slice(0, COUNT);
+// A partial list means a fetch failed, not that an article went away. Leave
+// the page as it is rather than drop an entry and claim a fresh update.
+if (latest.length > 0 && latest.length < newest.length) {
+  console.error(`only ${latest.length} of ${newest.length} articles resolved; leaving the writing page untouched`);
+  process.exit(0);
+}
 
 if (latest.length === 0) {
   console.error("no articles resolved; leaving the writing page untouched");
   process.exit(1);
 }
 
+// Format the calendar date as written (YYYY-MM-DD prefix), so an article
+// published late in the evening US time does not show as the next day.
 const fmt = (iso) =>
-  new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  new Date(`${iso.slice(0, 10)}T12:00:00Z`).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 
 const items = latest
   .map(

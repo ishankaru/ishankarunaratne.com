@@ -1,6 +1,6 @@
 # ishankarunaratne.com
 
-Personal site of Ishan Karunaratne. One static page, no build step, no dependencies.
+Personal site of Ishan Karunaratne. Static hand-written HTML, no build step, no dependencies.
 
 Hosted on GitHub Pages from the `main` branch, served at the apex domain via `CNAME`.
 
@@ -8,11 +8,14 @@ Hosted on GitHub Pages from the `main` branch, served at the apex domain via `CN
 
 | File | Purpose |
 |---|---|
-| `index.html` | The whole page: markup, inlined CSS and font faces, and the JSON-LD in `<head>`. |
-| `assets/fonts/` | Schibsted Grotesk, self-hosted, one variable woff2. |
-| `llms.txt` | Identity and disambiguation for AI crawlers. |
-| `robots.txt` | Allows the AI crawlers explicitly. |
-| `sitemap.xml` | Single URL. |
+| `index.html` | Home: the canonical Person entity graph (`#person`, every owned site) in `<head>`. Other sites reference this `@id`; never rename it. |
+| `about/`, `work/`, `writing/`, `contact/` | One `index.html` each. `/about/` carries the Person inline (same `@id`) with the credentials it shows. |
+| `404.html` | GitHub Pages not-found page. |
+| `assets/` | `style.css`, project screenshots (1200x750 webp), the portrait, and Schibsted Grotesk in `fonts/`. |
+| `llms.txt` | Identity and disambiguation for AI crawlers. Keep its counts in step with the pages. |
+| `robots.txt`, `sitemap.xml` | All crawlers allowed; five URLs with real lastmod dates. |
+| `scripts/refresh-writing.mjs` | Daily GitHub Action that rebuilds "Latest writing" on /writing/ from the TechEarl sitemap. Publish dates are cached in `scripts/writing-dates.json`, so a run only fetches new articles. |
+| `scripts/indexnow-submit.mjs` | IndexNow ping (home page only; pass other URLs by hand). |
 | `CNAME` | Apex domain for GitHub Pages. |
 
 ## Local preview
