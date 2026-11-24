@@ -35,6 +35,11 @@ function articlesFromSitemap(xml) {
   return out;
 }
 
+// Titles and descriptions come out of HTML attributes already entity-encoded.
+// Decode them once here, because esc() encodes them again on output.
+const decode = (s) =>
+  s.replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+
 // lastmod tracks edits, so sort candidates by the real datePublished from each
 // article's Article schema. Falls back to lastmod when the schema is absent.
 async function enrich(entry) {
@@ -49,8 +54,8 @@ async function enrich(entry) {
     (html.match(/"datePublished"\s*:\s*"([^"]+)"/) || [])[1] || entry.lastmod;
   return {
     ...entry,
-    title: title.replace(/\s*\|\s*TechEarl\s*$/, "").trim(),
-    description: description.trim(),
+    title: decode(title).replace(/\s*\|\s*TechEarl\s*$/, "").trim(),
+    description: decode(description).trim(),
     published,
   };
 }
